@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>dns on </title>
+    <link>https://hackartists.github.io/categories/dns/</link>
+    <description>Recent content in dns on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-KR</language>
+    <lastBuildDate>Sat, 27 Feb 2021 20:30:00 +0900</lastBuildDate><atom:link href="https://hackartists.github.io/categories/dns/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>도커 DNS 활용편</title>
+      <link>https://hackartists.github.io/infra/docker/docker-dns/</link>
+      <pubDate>Sat, 27 Feb 2021 20:30:00 +0900</pubDate>
+      
+      <guid>https://hackartists.github.io/infra/docker/docker-dns/</guid>
+      <description>목표  도커 컨테이너들 간에는 네트워크 alias 로 통신이 가능하지만, 호스트 머신에서는 컨테이너와 통신하기가 어려움.  매번 변하는 도커들의 IP 를 조회해서 관리하기가 어려움. 고정 IP로 지정할 수도 있으나, 이런 경우 해당 네트워크의 모든 컨테이너의 IP 를 관리해야 함.    동작 원리  도커 이름을 풀이해 줄 수 있는 DNS 서버를 개발  해당 서버의 동작은 아래와 같음.      사전 준비 사항  본 섹션은 호스트 머신과 도커 컨테이너가 직접적인 통신이 가능해야 함.</description>
+    </item>
+    
+  </channel>
+</rss>

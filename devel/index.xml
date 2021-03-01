@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Devels on </title>
+    <link>https://hackartists.github.io/devel/</link>
+    <description>Recent content in Devels on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-KR</language>
+    <lastBuildDate>Sat, 13 Feb 2021 22:40:17 +0900</lastBuildDate><atom:link href="https://hackartists.github.io/devel/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Development</title>
+      <link>https://hackartists.github.io/devel/introduction/</link>
+      <pubDate>Sat, 13 Feb 2021 22:40:17 +0900</pubDate>
+      
+      <guid>https://hackartists.github.io/devel/introduction/</guid>
+      <description>서비스를 개발하는 단계
+주요 역할  구현 방안 모색 기능 구현 및 리뷰  주요 스킬  신기술 학습 능력 오픈소스 활용 및 분석 능력 프로그래밍 능력 코드 및 이슈 관리 능력  </description>
+    </item>
+    
+  </channel>
+</rss>

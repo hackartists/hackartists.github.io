@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>docker build on </title>
+    <link>https://hackartists.github.io/categories/docker-build/</link>
+    <description>Recent content in docker build on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-KR</language>
+    <lastBuildDate>Mon, 15 Feb 2021 08:04:00 +0900</lastBuildDate><atom:link href="https://hackartists.github.io/categories/docker-build/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>도커 빌드 고급 사용법</title>
+      <link>https://hackartists.github.io/infra/docker/docker-build-advanced/</link>
+      <pubDate>Mon, 15 Feb 2021 08:04:00 +0900</pubDate>
+      
+      <guid>https://hackartists.github.io/infra/docker/docker-build-advanced/</guid>
+      <description>Dockerignore 활용  docker build 수행시 모든 하위 디렉토리를 컨텍스트로 로딩  build 디렉토리 등이 포함될 때는 컨테스트 로딩에 시간이 길어짐. 특정 디렉토리를 컨텍스트에서 제외할 필요가 있음.   .dockerignore 파일을 생성하여 디렉토리 필터링 수행  기본적으로 디렉토리 이름이 들어가지만 몇가지 유용한 문법을 지원 build 디렉토리 제외 */temp* 1 레벨 하위 디렉토리에서 temp 로 시작하는 디렉토리 제외 */*/temp* 2 레벨 하위 디렉토리에서 temp 로 시작하는 디렉토리 제외 temp? 는 temp 로 시작하고 다음에 한글자가 더 있는 디렉토리 제외  예) tempa , tempb 등       # comment build */temp* */*/temp* temp?</description>
+    </item>
+    
+  </channel>
+</rss>

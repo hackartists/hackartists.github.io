@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>container on </title>
+    <link>https://hackartists.github.io/categories/container/</link>
+    <description>Recent content in container on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-KR</language>
+    <lastBuildDate>Thu, 11 Feb 2021 00:00:00 +0900</lastBuildDate><atom:link href="https://hackartists.github.io/categories/container/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>컨테이너 관리</title>
+      <link>https://hackartists.github.io/infra/docker/docker-basic/</link>
+      <pubDate>Thu, 11 Feb 2021 00:00:00 +0900</pubDate>
+      
+      <guid>https://hackartists.github.io/infra/docker/docker-basic/</guid>
+      <description>컨테이너 생성  CentOS 이미지를 이용하여 도커 컨테이너 생성  -it 옵션은 컨테이너의 터미널(TTY)와 입력장치(STDIN)를 연결(attach)하면서 실행 --name 옵션은 컨테이너 이름을 특정 이름으로 지정  이름이 지정되어 있으면 해당 컨테이너를 관리할 때, 지정한 이름으로 관리 할 수 있음. 이름이 없으면, 무작위로 이름이 만들어지며, 해당 컨테이너를 관리할 때, 무작위 이름 또는 컨테이너 해시의 앞에 3-4자리 정도를 이용할 수 있음.       docker run --name centos -it centos  접속된 도커 터미널을 종료하는 방법  Ctrl-p Ctrl-q 단축키를 통해서 컨테이너는 종료하지 않고 종료 가능 exit 으로 종료하면, 컨테이너도 종료되며, =docker start centos=로 시작 가능  재시작된 컨테이너에 접속 하는 방법은 다음장 참고      컨테이너에 연결 DONE 컨테이너 상태 확인  docker ps 를 통해서, 실행되고 있는 컨테이너 조회 docker ps -a 를 통해서, 생성된 모든 컨테이너 조회 docker ps -a -f name=centos 를 사용하여, 컨테이너 이름이 centos 인 정보만 조회  filter 에 대한 상세한 설명은 도커 필터 설명에서 확인 가능 docker ps -a | grep centos 도 비슷한 결과를 얻을 수 있음.</description>
+    </item>
+    
+    <item>
+      <title>DB 컨테이너 관리</title>
+      <link>https://hackartists.github.io/infra/docker/manage-db/</link>
+      <pubDate>Thu, 11 Feb 2021 00:00:00 +0900</pubDate>
+      
+      <guid>https://hackartists.github.io/infra/docker/manage-db/</guid>
+      <description>MongoDB 컨테이너 생성  docker 실행 명령어     Flags Description     -d 컨테이너 터미널을 획득하지 않고, 디먼모드로 수행   -p 컨테이너 PORT를 호스트(Host)로 바인딩   -v 호스트의 파일 또는 디렉토리를 컨테이너로 마운트   &amp;ndash;name 컨테이너 이름   &amp;ndash;restart 재시작 정책 (always 는 종료시 자동 재시작)    docker run -d -p 27017:27017 \  --restart always \  -v /Users/hackartist/data/docker/mongo/data:/data/db \  --name mongo mongo MongoDB 관리  Robo 3T 와 같은 MongoDB 관리 GUI 툴 사용 가능    Figure 1: robo3t</description>
+    </item>
+    
+  </channel>
+</rss>

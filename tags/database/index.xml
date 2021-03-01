@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>database on </title>
+    <link>https://hackartists.github.io/tags/database/</link>
+    <description>Recent content in database on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-KR</language>
+    <lastBuildDate>Thu, 11 Feb 2021 00:00:00 +0900</lastBuildDate><atom:link href="https://hackartists.github.io/tags/database/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>DB 컨테이너 관리</title>
+      <link>https://hackartists.github.io/infra/docker/manage-db/</link>
+      <pubDate>Thu, 11 Feb 2021 00:00:00 +0900</pubDate>
+      
+      <guid>https://hackartists.github.io/infra/docker/manage-db/</guid>
+      <description>MongoDB 컨테이너 생성  docker 실행 명령어     Flags Description     -d 컨테이너 터미널을 획득하지 않고, 디먼모드로 수행   -p 컨테이너 PORT를 호스트(Host)로 바인딩   -v 호스트의 파일 또는 디렉토리를 컨테이너로 마운트   &amp;ndash;name 컨테이너 이름   &amp;ndash;restart 재시작 정책 (always 는 종료시 자동 재시작)    docker run -d -p 27017:27017 \  --restart always \  -v /Users/hackartist/data/docker/mongo/data:/data/db \  --name mongo mongo MongoDB 관리  Robo 3T 와 같은 MongoDB 관리 GUI 툴 사용 가능    Figure 1: robo3t</description>
+    </item>
+    
+  </channel>
+</rss>

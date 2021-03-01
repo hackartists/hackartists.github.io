@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on </title>
+    <link>https://hackartists.github.io/categories/</link>
+    <description>Recent content in Categories on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-KR</language>
+    <lastBuildDate>Mon, 01 Mar 2021 23:34:00 +0900</lastBuildDate><atom:link href="https://hackartists.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>activity-diagram</title>
+      <link>https://hackartists.github.io/categories/activity-diagram/</link>
+      <pubDate>Mon, 01 Mar 2021 23:34:00 +0900</pubDate>
+      
+      <guid>https://hackartists.github.io/categories/activity-diagram/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>design</title>
+      <link>https://hackartists.github.io/categories/design/</link>
+      <pubDate>Mon, 01 Mar 2021 23:34:00 +0900</pubDate>
+      
+      <guid>https://hackartists.github.io/categories/design/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>uml</title>
+      <link>https://hackartists.github.io/categories/uml/</link>
+      <pubDate>Mon, 01 Mar 2021 23:34:00 +0900</pubDate>
+      
+      <guid>https://hackartists.github.io/categories/uml/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sequence-diagram</title>
+      <link>https://hackartists.github.io/categories/sequence-diagram/</link>
+      <pubDate>Sun, 28 Feb 2021 12:21:00 +0900</pubDate>
+      
+      <guid>https://hackartists.github.io/categories/sequence-diagram/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>plantuml</title>
+      <link>https://hackartists.github.io/categories/plantuml/</link>
+      <pubDate>Sat, 27 Feb 2021 22:00:00 +0900</pubDate>
+      
+      <guid>https://hackartists.github.io/categories/plantuml/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>dns</title>
+      <link>https://hackartists.github.io/categories/dns/</link>
+      <pubDate>Sat, 27 Feb 2021 20:30:00 +0900</pubDate>
+      
+      <guid>https://hackartists.github.io/categories/dns/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>docker</title>
+      <link>https://hackartists.github.io/categories/docker/</link>
+      <pubDate>Sat, 27 Feb 2021 20:30:00 +0900</pubDate>
+      
+      <guid>https://hackartists.github.io/categories/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>infra</title>
+      <link>https://hackartists.github.io/categories/infra/</link>
+      <pubDate>Sat, 27 Feb 2021 20:30:00 +0900</pubDate>
+      
+      <guid>https://hackartists.github.io/categories/infra/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>archlinux</title>
+      <link>https://hackartists.github.io/categories/archlinux/</link>
+      <pubDate>Sat, 27 Feb 2021 11:32:00 +0900</pubDate>
+      
+      <guid>https://hackartists.github.io/categories/archlinux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>blog</title>
+      <link>https://hackartists.github.io/categories/blog/</link>
+      <pubDate>Sat, 27 Feb 2021 11:32:00 +0900</pubDate>
+      
+      <guid>https://hackartists.github.io/categories/blog/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mirrorlist</title>
+      <link>https://hackartists.github.io/categories/mirrorlist/</link>
+      <pubDate>Sat, 27 Feb 2021 11:32:00 +0900</pubDate>
+      
+      <guid>https://hackartists.github.io/categories/mirrorlist/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vpn</title>
+      <link>https://hackartists.github.io/categories/vpn/</link>
+      <pubDate>Wed, 24 Feb 2021 08:37:00 +0900</pubDate>
+      
+      <guid>https://hackartists.github.io/categories/vpn/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>compose</title>
+      <link>https://hackartists.github.io/categories/compose/</link>
+      <pubDate>Sun, 21 Feb 2021 11:10:00 +0900</pubDate>
+      
+      <guid>https://hackartists.github.io/categories/compose/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>docker build</title>
+      <link>https://hackartists.github.io/categories/docker-build/</link>
+      <pubDate>Mon, 15 Feb 2021 08:04:00 +0900</pubDate>
+      
+      <guid>https://hackartists.github.io/categories/docker-build/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>emacs</title>
+      <link>https://hackartists.github.io/categories/emacs/</link>
+      <pubDate>Sun, 14 Feb 2021 22:33:27 +0900</pubDate>
+      
+      <guid>https://hackartists.github.io/categories/emacs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>input</title>
+      <link>https://hackartists.github.io/categories/input/</link>
+      <pubDate>Sun, 14 Feb 2021 22:33:27 +0900</pubDate>
+      
+      <guid>https://hackartists.github.io/categories/input/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>karaniner</title>
+      <link>https://hackartists.github.io/categories/karaniner/</link>
+      <pubDate>Sun, 14 Feb 2021 22:33:27 +0900</pubDate>
+      
+      <guid>https://hackartists.github.io/categories/karaniner/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>keyboard</title>
+      <link>https://hackartists.github.io/categories/keyboard/</link>
+      <pubDate>Sun, 14 Feb 2021 22:33:27 +0900</pubDate>
+      
+      <guid>https://hackartists.github.io/categories/keyboard/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>layout</title>
+      <link>https://hackartists.github.io/categories/layout/</link>
+      <pubDate>Sun, 14 Feb 2021 22:33:27 +0900</pubDate>
+      
+      <guid>https://hackartists.github.io/categories/layout/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>macos</title>
+      <link>https://hackartists.github.io/categories/macos/</link>
+      <pubDate>Sun, 14 Feb 2021 22:33:27 +0900</pubDate>
+      
+      <guid>https://hackartists.github.io/categories/macos/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>shortcut</title>
+      <link>https://hackartists.github.io/categories/shortcut/</link>
+      <pubDate>Sun, 14 Feb 2021 22:33:27 +0900</pubDate>
+      
+      <guid>https://hackartists.github.io/categories/shortcut/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>switching</title>
+      <link>https://hackartists.github.io/categories/switching/</link>
+      <pubDate>Sun, 14 Feb 2021 22:33:27 +0900</pubDate>
+      
+      <guid>https://hackartists.github.io/categories/switching/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>development</title>
+      <link>https://hackartists.github.io/categories/development/</link>
+      <pubDate>Sat, 13 Feb 2021 22:40:17 +0900</pubDate>
+      
+      <guid>https://hackartists.github.io/categories/development/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ops</title>
+      <link>https://hackartists.github.io/categories/ops/</link>
+      <pubDate>Sat, 13 Feb 2021 22:35:44 +0900</pubDate>
+      
+      <guid>https://hackartists.github.io/categories/ops/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>testing</title>
+      <link>https://hackartists.github.io/categories/testing/</link>
+      <pubDate>Sat, 13 Feb 2021 22:35:44 +0900</pubDate>
+      
+      <guid>https://hackartists.github.io/categories/testing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>terminology</title>
+      <link>https://hackartists.github.io/categories/terminology/</link>
+      <pubDate>Thu, 11 Feb 2021 08:30:00 +0900</pubDate>
+      
+      <guid>https://hackartists.github.io/categories/terminology/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>container</title>
+      <link>https://hackartists.github.io/categories/container/</link>
+      <pubDate>Thu, 11 Feb 2021 00:00:00 +0900</pubDate>
+      
+      <guid>https://hackartists.github.io/categories/container/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>database</title>
+      <link>https://hackartists.github.io/categories/database/</link>
+      <pubDate>Thu, 11 Feb 2021 00:00:00 +0900</pubDate>
+      
+      <guid>https://hackartists.github.io/categories/database/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>image</title>
+      <link>https://hackartists.github.io/categories/image/</link>
+      <pubDate>Thu, 11 Feb 2021 00:00:00 +0900</pubDate>
+      
+      <guid>https://hackartists.github.io/categories/image/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>management</title>
+      <link>https://hackartists.github.io/categories/management/</link>
+      <pubDate>Thu, 11 Feb 2021 00:00:00 +0900</pubDate>
+      
+      <guid>https://hackartists.github.io/categories/management/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

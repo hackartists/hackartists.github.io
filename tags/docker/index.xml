@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>docker on </title>
+    <link>https://hackartists.github.io/tags/docker/</link>
+    <description>Recent content in docker on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-KR</language>
+    <lastBuildDate>Sat, 27 Feb 2021 20:30:00 +0900</lastBuildDate><atom:link href="https://hackartists.github.io/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Docker</title>
+      <link>https://hackartists.github.io/infra/terminology/docker/</link>
+      <pubDate>Thu, 11 Feb 2021 08:30:00 +0900</pubDate>
+      
+      <guid>https://hackartists.github.io/infra/terminology/docker/</guid>
+      <description>호스트(Host) 도커 디먼을 수행하고 있는 운영체제 및 플랫폼
+이미지(Image) 도커에서 관리되는 애플리케이션 템플릿
+저장소(Repository) 도커 이미지가 저장되는 저장소를 의미하며, 대부분은 domain/user-id/image-name 으로 구성됨
+ domain 이 기술되지 않으면 기본적으로 hub.docker.com 의 registry 도메인을 기본으로 함.  컨테이너(Container) 인스턴스화(구동중인) 된 도커 이미지
+볼륨(Volume) 컨테이너를 위한 저장 공간</description>
+    </item>
+    
+    <item>
+      <title>개요</title>
+      <link>https://hackartists.github.io/infra/docker/introduction/</link>
+      <pubDate>Thu, 11 Feb 2021 00:00:00 +0900</pubDate>
+      
+      <guid>https://hackartists.github.io/infra/docker/introduction/</guid>
+      <description>DONE 기본 개념  각 애플리케이션마다 격리된 환경으로 관리  서로 다른 애플리에키션간의 영향도를 최소화 하나의 컴퓨터 운영체제(Host OS)에 격리된 운영체제(Guest OS)를 생성   호스트 운영체제의 커널 공유를 통해 자원을 활용적으로 사용하기 위해 커널을 공유하여, CPU, RAM 등의 하드웨어 자원 공유    도커 설치 https://docs.docker.com/get-docker/ 를 참고하여 다양한 운영체제에서 설치할 수 있음.
+ Mac OS Windows Linux  Arch Linux 에서 도커 설치  yay, pacman 등을 이용하여 설치 할 수 있음.</description>
+    </item>
+    
+    <item>
+      <title>컨테이너 관리</title>
+      <link>https://hackartists.github.io/infra/docker/docker-basic/</link>
+      <pubDate>Thu, 11 Feb 2021 00:00:00 +0900</pubDate>
+      
+      <guid>https://hackartists.github.io/infra/docker/docker-basic/</guid>
+      <description>컨테이너 생성  CentOS 이미지를 이용하여 도커 컨테이너 생성  -it 옵션은 컨테이너의 터미널(TTY)와 입력장치(STDIN)를 연결(attach)하면서 실행 --name 옵션은 컨테이너 이름을 특정 이름으로 지정  이름이 지정되어 있으면 해당 컨테이너를 관리할 때, 지정한 이름으로 관리 할 수 있음. 이름이 없으면, 무작위로 이름이 만들어지며, 해당 컨테이너를 관리할 때, 무작위 이름 또는 컨테이너 해시의 앞에 3-4자리 정도를 이용할 수 있음.       docker run --name centos -it centos  접속된 도커 터미널을 종료하는 방법  Ctrl-p Ctrl-q 단축키를 통해서 컨테이너는 종료하지 않고 종료 가능 exit 으로 종료하면, 컨테이너도 종료되며, =docker start centos=로 시작 가능  재시작된 컨테이너에 접속 하는 방법은 다음장 참고      컨테이너에 연결 DONE 컨테이너 상태 확인  docker ps 를 통해서, 실행되고 있는 컨테이너 조회 docker ps -a 를 통해서, 생성된 모든 컨테이너 조회 docker ps -a -f name=centos 를 사용하여, 컨테이너 이름이 centos 인 정보만 조회  filter 에 대한 상세한 설명은 도커 필터 설명에서 확인 가능 docker ps -a | grep centos 도 비슷한 결과를 얻을 수 있음.</description>
+    </item>
+    
+    <item>
+      <title>DB 컨테이너 관리</title>
+      <link>https://hackartists.github.io/infra/docker/manage-db/</link>
+      <pubDate>Thu, 11 Feb 2021 00:00:00 +0900</pubDate>
+      
+      <guid>https://hackartists.github.io/infra/docker/manage-db/</guid>
+      <description>MongoDB 컨테이너 생성  docker 실행 명령어     Flags Description     -d 컨테이너 터미널을 획득하지 않고, 디먼모드로 수행   -p 컨테이너 PORT를 호스트(Host)로 바인딩   -v 호스트의 파일 또는 디렉토리를 컨테이너로 마운트   &amp;ndash;name 컨테이너 이름   &amp;ndash;restart 재시작 정책 (always 는 종료시 자동 재시작)    docker run -d -p 27017:27017 \  --restart always \  -v /Users/hackartist/data/docker/mongo/data:/data/db \  --name mongo mongo MongoDB 관리  Robo 3T 와 같은 MongoDB 관리 GUI 툴 사용 가능    Figure 1: robo3t</description>
+    </item>
+    
+    <item>
+      <title>도커 이미지 생성</title>
+      <link>https://hackartists.github.io/infra/docker/manage-image/</link>
+      <pubDate>Thu, 11 Feb 2021 00:00:00 +0900</pubDate>
+      
+      <guid>https://hackartists.github.io/infra/docker/manage-image/</guid>
+      <description>DONE 도커 이미지 관리 도커 이미지란?  컨테이너를 만들기 위한 템플릿  도커 이미지 조회  docker images 로 조회  레포지토리는 이미지들의 저장소를 의미함.  통용적으로는 레포지토리의 마지막 / 뒤를 따서 이미지의 이름으로 부름.   이미지는 단일 템플릿을 대상으로 하여, 해시 형태로 표현됨.     docker images    REPOSITORY TAG IMAGE ID CREATED SIZE     ubuntu latest adafef2e596e 7 months ago 73.</description>
+    </item>
+    
+    <item>
+      <title>도커 빌드 고급 사용법</title>
+      <link>https://hackartists.github.io/infra/docker/docker-build-advanced/</link>
+      <pubDate>Mon, 15 Feb 2021 08:04:00 +0900</pubDate>
+      
+      <guid>https://hackartists.github.io/infra/docker/docker-build-advanced/</guid>
+      <description>Dockerignore 활용  docker build 수행시 모든 하위 디렉토리를 컨텍스트로 로딩  build 디렉토리 등이 포함될 때는 컨테스트 로딩에 시간이 길어짐. 특정 디렉토리를 컨텍스트에서 제외할 필요가 있음.   .dockerignore 파일을 생성하여 디렉토리 필터링 수행  기본적으로 디렉토리 이름이 들어가지만 몇가지 유용한 문법을 지원 build 디렉토리 제외 */temp* 1 레벨 하위 디렉토리에서 temp 로 시작하는 디렉토리 제외 */*/temp* 2 레벨 하위 디렉토리에서 temp 로 시작하는 디렉토리 제외 temp? 는 temp 로 시작하고 다음에 한글자가 더 있는 디렉토리 제외  예) tempa , tempb 등       # comment build */temp* */*/temp* temp?</description>
+    </item>
+    
+    <item>
+      <title>다중 컨테이너 관리</title>
+      <link>https://hackartists.github.io/infra/docker/docker-compose/</link>
+      <pubDate>Sun, 21 Feb 2021 11:10:00 +0900</pubDate>
+      
+      <guid>https://hackartists.github.io/infra/docker/docker-compose/</guid>
+      <description>도커 컴포즈(Docker compose) 소개  도커 컴포즈는 여러 개의 도커로 구성되는 네트워크를 하나의 파일로 관리  네트워크를 정의 다수의 컨테이너를 정의 각 컨테이너는 이미지, 환경 변수, 포트 정보 등을 정의      도커네트워크 설정 네트워크 정보 설정  각자 사용하고자 하는 도커 개발 네트워크의 이름 설정  본 블로그에서는 dev-net 이라고 설정   devnet 의 IP 대역을 192.168.100.0/24 로 설정  즉, 해당 네트워크에 포함되는 모든 도커 컨테이너는 192.</description>
+    </item>
+    
+    <item>
+      <title>도커 VPN 활용편</title>
+      <link>https://hackartists.github.io/infra/docker/docker-vpn/</link>
+      <pubDate>Wed, 24 Feb 2021 08:37:00 +0900</pubDate>
+      
+      <guid>https://hackartists.github.io/infra/docker/docker-vpn/</guid>
+      <description>도커 네트워크 개요 및 제약사항   도커 네트워크는 도커들 간의 사설 네트워크가 구축되고, 호스트 머신과 bridge 인터페이스를 통해서 통신
+ Mac OS의 도커는 가상 머신(virtual machine) 에서 구동되는 것이기 때문에, bridge 가 없음. 따라서, Mac OS 에서는 호스트 머신과 도커 컨테이너들이 직접적으로 통신할 수 없음.  상세한 내용은 도커 네트워크를 참고      Mac OS 에서 호스트 머신이 컨테이너에 접근하기 위해서, -p 옵션을 통해 포트 바인딩이 필요함.</description>
+    </item>
+    
+    <item>
+      <title>도커 DNS 활용편</title>
+      <link>https://hackartists.github.io/infra/docker/docker-dns/</link>
+      <pubDate>Sat, 27 Feb 2021 20:30:00 +0900</pubDate>
+      
+      <guid>https://hackartists.github.io/infra/docker/docker-dns/</guid>
+      <description>목표  도커 컨테이너들 간에는 네트워크 alias 로 통신이 가능하지만, 호스트 머신에서는 컨테이너와 통신하기가 어려움.  매번 변하는 도커들의 IP 를 조회해서 관리하기가 어려움. 고정 IP로 지정할 수도 있으나, 이런 경우 해당 네트워크의 모든 컨테이너의 IP 를 관리해야 함.    동작 원리  도커 이름을 풀이해 줄 수 있는 DNS 서버를 개발  해당 서버의 동작은 아래와 같음.      사전 준비 사항  본 섹션은 호스트 머신과 도커 컨테이너가 직접적인 통신이 가능해야 함.</description>
+    </item>
+    
+  </channel>
+</rss>

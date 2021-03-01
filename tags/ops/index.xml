@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ops on </title>
+    <link>https://hackartists.github.io/tags/ops/</link>
+    <description>Recent content in ops on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-KR</language>
+    <lastBuildDate>Sat, 13 Feb 2021 22:35:44 +0900</lastBuildDate><atom:link href="https://hackartists.github.io/tags/ops/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Testing and Operations</title>
+      <link>https://hackartists.github.io/ops/introduction/</link>
+      <pubDate>Sat, 13 Feb 2021 22:35:44 +0900</pubDate>
+      
+      <guid>https://hackartists.github.io/ops/introduction/</guid>
+      <description>서비스 및 기능을 테스트하고 운영하는 단계
+주요 역할  기능 테스트 장애 모니터링 및 관리  주요 스킬  테스트 케이스 정의 및 자동화 능력 장애 메트릭 분석 및 정의 능력 프로세스 수립 능력  </description>
+    </item>
+    
+  </channel>
+</rss>

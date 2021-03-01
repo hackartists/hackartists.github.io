@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>introduction on </title>
+    <link>https://hackartists.github.io/tags/introduction/</link>
+    <description>Recent content in introduction on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-KR</language>
+    <lastBuildDate>Sat, 13 Feb 2021 23:04:39 +0900</lastBuildDate><atom:link href="https://hackartists.github.io/tags/introduction/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Infrastructure</title>
+      <link>https://hackartists.github.io/infra/introduction/</link>
+      <pubDate>Sat, 13 Feb 2021 22:33:54 +0900</pubDate>
+      
+      <guid>https://hackartists.github.io/infra/introduction/</guid>
+      <description>서비스를 출시하기 위한 배포 환경을 만드는 과정으로, 서비스, 모니터링 등이 잘 구동될 수 있는 환경 구축
+주요 역할  라우터, 데이터센터 등 다양한 하드웨어 관리 Firewall, 인터넷 상태 등의 네트워크 관리 각 서비스 및 서버에 대한 플랫폼 관리 각 서비스 및 소프트웨어 관리  주요 스킬  자동화 스크립트 개발 리스크 분석 능력 네트워크 모니터링 및 분석 능력 프로세스 수립 능력  </description>
+    </item>
+    
+    <item>
+      <title>Introduction</title>
+      <link>https://hackartists.github.io/emacs/introduction/</link>
+      <pubDate>Sat, 13 Feb 2021 22:42:21 +0900</pubDate>
+      
+      <guid>https://hackartists.github.io/emacs/introduction/</guid>
+      <description>Emacs를 사용하기 위해서 필요한 다양한 지식 및 기술 전달</description>
+    </item>
+    
+    <item>
+      <title>개요</title>
+      <link>https://hackartists.github.io/infra/docker/introduction/</link>
+      <pubDate>Thu, 11 Feb 2021 00:00:00 +0900</pubDate>
+      
+      <guid>https://hackartists.github.io/infra/docker/introduction/</guid>
+      <description>DONE 기본 개념  각 애플리케이션마다 격리된 환경으로 관리  서로 다른 애플리에키션간의 영향도를 최소화 하나의 컴퓨터 운영체제(Host OS)에 격리된 운영체제(Guest OS)를 생성   호스트 운영체제의 커널 공유를 통해 자원을 활용적으로 사용하기 위해 커널을 공유하여, CPU, RAM 등의 하드웨어 자원 공유    도커 설치 https://docs.docker.com/get-docker/ 를 참고하여 다양한 운영체제에서 설치할 수 있음.
+ Mac OS Windows Linux  Arch Linux 에서 도커 설치  yay, pacman 등을 이용하여 설치 할 수 있음.</description>
+    </item>
+    
+    <item>
+      <title>Design</title>
+      <link>https://hackartists.github.io/design/introduction/</link>
+      <pubDate>Sat, 13 Feb 2021 22:35:57 +0900</pubDate>
+      
+      <guid>https://hackartists.github.io/design/introduction/</guid>
+      <description>개발에 앞서 설계를 하는 단계
+주요 역할  요구사항 및 사용자 시나리오 도출 기능 및 배포 아키텍처 설계 사용자 인터페이스 설계 그 외 프로젝트 관리 도구 및 방법 설정 개발을 위한 기술 조사  주요 스킬  구조화 및 추상화 능력 UI/UX 디자인 능력 리스크 분석 능력 프로세스 수립 능력 신기술에 대한 학습 능력   </description>
+    </item>
+    
+    <item>
+      <title>Development</title>
+      <link>https://hackartists.github.io/devel/introduction/</link>
+      <pubDate>Sat, 13 Feb 2021 22:40:17 +0900</pubDate>
+      
+      <guid>https://hackartists.github.io/devel/introduction/</guid>
+      <description>서비스를 개발하는 단계
+주요 역할  구현 방안 모색 기능 구현 및 리뷰  주요 스킬  신기술 학습 능력 오픈소스 활용 및 분석 능력 프로그래밍 능력 코드 및 이슈 관리 능력  </description>
+    </item>
+    
+    <item>
+      <title>Testing and Operations</title>
+      <link>https://hackartists.github.io/ops/introduction/</link>
+      <pubDate>Sat, 13 Feb 2021 22:35:44 +0900</pubDate>
+      
+      <guid>https://hackartists.github.io/ops/introduction/</guid>
+      <description>서비스 및 기능을 테스트하고 운영하는 단계
+주요 역할  기능 테스트 장애 모니터링 및 관리  주요 스킬  테스트 케이스 정의 및 자동화 능력 장애 메트릭 분석 및 정의 능력 프로세스 수립 능력  </description>
+    </item>
+    
+    <item>
+      <title>블로그 소개</title>
+      <link>https://hackartists.github.io/blog/%EB%B8%94%EB%A1%9C%EA%B7%B8-%EC%86%8C%EA%B0%9C/</link>
+      <pubDate>Sat, 13 Feb 2021 23:04:39 +0900</pubDate>
+      
+      <guid>https://hackartists.github.io/blog/%EB%B8%94%EB%A1%9C%EA%B7%B8-%EC%86%8C%EA%B0%9C/</guid>
+      <description>본 블로그는 서비스를 개발하고 운영하는데 필요한 기술에 대해서 스스로 공부하고 정리해나가기 위해서 만들어졌습니다.
+잘못된 정보나 추가로 필요한 정보들은 많은 피드백 주시길 바랍니다.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>image on </title>
+    <link>https://hackartists.github.io/categories/image/</link>
+    <description>Recent content in image on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-KR</language>
+    <lastBuildDate>Thu, 11 Feb 2021 00:00:00 +0900</lastBuildDate><atom:link href="https://hackartists.github.io/categories/image/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>도커 이미지 생성</title>
+      <link>https://hackartists.github.io/infra/docker/manage-image/</link>
+      <pubDate>Thu, 11 Feb 2021 00:00:00 +0900</pubDate>
+      
+      <guid>https://hackartists.github.io/infra/docker/manage-image/</guid>
+      <description>DONE 도커 이미지 관리 도커 이미지란?  컨테이너를 만들기 위한 템플릿  도커 이미지 조회  docker images 로 조회  레포지토리는 이미지들의 저장소를 의미함.  통용적으로는 레포지토리의 마지막 / 뒤를 따서 이미지의 이름으로 부름.   이미지는 단일 템플릿을 대상으로 하여, 해시 형태로 표현됨.     docker images    REPOSITORY TAG IMAGE ID CREATED SIZE     ubuntu latest adafef2e596e 7 months ago 73.</description>
+    </item>
+    
+  </channel>
+</rss>
