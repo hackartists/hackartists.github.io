@@ -1,0 +1,453 @@
+<!doctype html>
+<html lang="ko-KR">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-site-verification" content="tNCBNDAHu7WCNK0UMGcP3wGpc2QbFHHjdkVZWtaC1RA" />
+
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='유즈케이스(Usecase) 다이어그램'>
+<meta property='og:description' content='This page explains how to draw usecase diagram with plantuml.'>
+<meta property='og:url' content='https://www.hackartist.io/design/uml/usecase-diagram/'>
+<meta property='og:site_name' content=''>
+<meta property='og:type' content='article'><meta property='article:section' content='Design' /><meta property='article:tag' content='design' /><meta property='article:tag' content='uml' /><meta property='article:tag' content='plantuml' /><meta property='article:published_time' content='2021-02-27T22:00:00&#43;09:00'/><meta property='article:modified_time' content='2021-02-27T22:04:39&#43;09:00'/>
+<meta name="twitter:title" content="유즈케이스(Usecase) 다이어그램">
+<meta name="twitter:description" content="This page explains how to draw usecase diagram with plantuml."><link rel="preload" as="font" href="https://www.hackartist.io/fonts/vendor/jost/jost-v4-latin-regular.woff2" type="font/woff2" crossorigin>
+<link rel="preload" as="font" href="https://www.hackartist.io/fonts/vendor/jost/jost-v4-latin-700.woff2" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="https://www.hackartist.io/main.513b91602f78c359f8752f7fa109ef93113e4260c94cbd02252baca81058a5091ebc8580b506aff8de6f7c64daf29ec9317fd0cb7e305e5fce8935bd40323445.css" integrity="sha512-UTuRYC94w1n4dS9/oQnvkxE&#43;QmDJTL0CJSusqBBYpQkevIWAtQav&#43;N5vfGTa8p7JMX/Qy34wXl/OiTW9QDI0RQ==" crossorigin="anonymous">
+<noscript><style>img.lazyload { display: none; }</style></noscript>
+  <meta name="robots" content="index, follow">
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <title>유즈케이스(Usecase) 다이어그램 - Hackartist&#39;s Tech Site</title>
+<meta name="description" content="This page explains how to draw usecase diagram with plantuml.">
+<link rel="canonical" href="https://www.hackartist.io/design/uml/usecase-diagram/">
+<meta name="twitter:card" content="summary_large_image">
+      <meta name="twitter:image" content="https://www.hackartist.io/doks.png">
+    <meta name="twitter:title" content="유즈케이스(Usecase) 다이어그램">
+<meta name="twitter:description" content="This page explains how to draw usecase diagram with plantuml.">
+
+<meta name="twitter:site" content="@">
+<meta name="twitter:creator" content="@">
+
+<meta property="og:title" content="유즈케이스(Usecase) 다이어그램">
+<meta property="og:description" content="This page explains how to draw usecase diagram with plantuml.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.hackartist.io/design/uml/usecase-diagram/">
+
+  <meta property="og:image" content="https://www.hackartist.io/doks.png"/>
+    <meta property="article:published_time" content="2021-02-27T22:00:00+09:00">
+  <meta property="article:modified_time" content="2021-02-27T22:04:39+09:00">
+  <meta property="og:site_name" content="Hackartist&#39;s Tech Site">
+
+<meta property="article:publisher" content="https://www.facebook.com/">
+<meta property="article:author" content="https://www.facebook.com/">
+<meta property="og:locale" content="en_US">
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position":  1 ,
+        "name": "Home",
+        "item": "https:\/\/www.hackartist.io"
+    },{
+        "@type": "ListItem",
+        "position":  3 ,
+        "name": "Design",
+        "item": "https:\/\/www.hackartist.io\/design\/"
+    },{
+        "@type": "ListItem",
+        "position":  4 ,
+        "name": "Uml",
+        "item": "https:\/\/www.hackartist.io\/design\/uml\/"
+    },{
+        "@type": "ListItem",
+        "position":  5 ,
+        "name": "Usecase Diagram",
+        "item": "https:\/\/www.hackartist.io\/design\/uml\/usecase-diagram\/"
+    }]
+}
+</script>
+
+  <meta name="theme-color" content="#fff">
+<link rel="apple-touch-icon" sizes="180x180" href="https://www.hackartist.io/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://www.hackartist.io/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://www.hackartist.io/favicon-16x16.png">
+<link rel="manifest" href="https://www.hackartist.io/site.webmanifest">
+  
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3L5TX41ECT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-3L5TX41ECT');
+</script>
+<script data-ad-client="ca-pub-5079369906312917" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+</head>
+
+  <body class="design single">
+    <div class="header-bar fixed-top"></div>
+<header class="navbar fixed-top navbar-expand-md navbar-light">
+  <div class="container">
+    <input class="menu-btn order-0" type="checkbox" id="menu-btn">
+    <label class="menu-icon d-md-none" for="menu-btn"><span class="navicon"></span></label>
+    <a class="navbar-brand order-1 order-md-0 mr-auto" href="https://www.hackartist.io/">Hackartist&#39;s Tech Site</a>
+    <button id="mode" class="btn btn-link order-2 order-md-4" type="button" aria-label="Toggle mode">
+      <span class="toggle-dark"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></span>
+      <span class="toggle-light"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sun"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg></span>
+    </button>
+    <ul class="navbar-nav social-nav order-3 order-md-5">
+      <li class="nav-item">
+          <a class="nav-link" href="https://github.com/hackartists/hackartists.github.io"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg><span class="ml-2 sr-only">GitHub</span></a>
+        </li>
+      </ul>
+    <div class="collapse navbar-collapse order-4 order-md-1">
+      <ul class="navbar-nav main-nav mr-auto order-5 order-md-2"><li class="nav-item">
+            <a class="nav-link" href="https://www.hackartist.io/infra/introduction">Infrastructure</a>
+          </li>
+        <li class="nav-item active">
+            <a class="nav-link" href="https://www.hackartist.io/design/introduction">Design</a>
+          </li>
+        <li class="nav-item">
+            <a class="nav-link" href="https://www.hackartist.io/devel/introduction">Development</a>
+          </li>
+        <li class="nav-item">
+            <a class="nav-link" href="https://www.hackartist.io/ops/introduction">Testing&amp;Operation</a>
+          </li>
+        <li class="nav-item">
+            <a class="nav-link" href="https://www.hackartist.io/emacs/introduction">Emacs</a>
+          </li>
+        <li class="nav-item">
+            <a class="nav-link" href="https://www.hackartist.io/blog/">Blog</a>
+          </li>
+        </ul>
+      <div class="break order-6 d-md-none"></div>
+      <form class="navbar-form flex-grow-1 order-7 order-md-3">
+        <input id="userinput" class="form-control is-search" type="search" placeholder="Search docs..." aria-label="Search docs..." autocomplete="off">
+        <div id="suggestions" class="shadow bg-white rounded"></div>
+      </form>
+    </div>
+  </div>
+</header>
+
+    <div class="wrap container" role="document">
+      <div class="content">
+        
+	<div class="row flex-xl-nowrap">
+		<div class="col-lg-5 col-xl-4 docs-sidebar">
+			<nav class="docs-links" aria-label="Main navigation">
+				<h3>Design</h3>
+<h3>Terminology</h3>
+<ul class="list-unstyled">
+  <li><a class="docs-link" href="https://www.hackartist.io/design/terminology/uml-terms/">UML</a></li>
+  </ul>
+<h3>UML</h3>
+<ul class="list-unstyled">
+  <li><a class="docs-link active" href="https://www.hackartist.io/design/uml/usecase-diagram/">유즈케이스(Usecase) 다이어그램</a></li>
+  <li><a class="docs-link" href="https://www.hackartist.io/design/uml/sequence/">시퀀스(Sequence) 다이어그램</a></li>
+  <li><a class="docs-link" href="https://www.hackartist.io/design/uml/activity/">액티비티(Activity) 다이어그램</a></li>
+  </ul>
+
+			</nav>
+		</div>
+		<nav class="docs-toc d-none d-xl-block col-xl-3" aria-label="Secondary navigation">
+			<div class="page-links">
+    <h3>On this page</h3>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#유즈케이스-다이어그램이란">유즈케이스 다이어그램이란?</a>
+      <ul>
+        <li><a href="#정의-및-목적">정의 및 목적</a></li>
+        <li><a href="#유즈케이스-다이어그램">유즈케이스 다이어그램</a></li>
+      </ul>
+    </li>
+    <li><a href="#유즈케이스-다이어그램-그리기">유즈케이스 다이어그램 그리기</a>
+      <ul>
+        <li><a href="#사용자-및-기능-정의">사용자 및 기능 정의</a></li>
+        <li><a href="#기능-카테고리-정의">기능 카테고리 정의</a></li>
+        <li><a href="#사용자와-기능간의-관계-정의">사용자와 기능간의 관계 정의</a></li>
+        <li><a href="#기능간의-관계-정의">기능간의 관계 정의</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+
+		</nav>
+		<main class="docs-content col-lg-11 col-xl-9">
+		<h1>유즈케이스(Usecase) 다이어그램</h1>
+			<p class="lead">Drawing usecase diagram</p>
+			<h2 id="유즈케이스-다이어그램이란">유즈케이스 다이어그램이란?<a href="#유즈케이스-다이어그램이란" class="anchor" aria-hidden="true">#</a> </h2>
+<h3 id="정의-및-목적">정의 및 목적<a href="#정의-및-목적" class="anchor" aria-hidden="true">#</a> </h3>
+<ul>
+<li>유즈케이스 다이어그램은 사용자 간의 상호동작(interaction)을 표현
+<ul>
+<li>사용자가 수행할 수 있는 기능</li>
+<li>사용자와 시스템간의 상호동작 관계</li>
+<li>기능간의 상호동작 관계</li>
+<li>사용자와 다른 사용자간의 상호동작 관계
+<ul>
+<li>다른 사용자란 시스템상에서 정의된 서로 다른 타입의 사용자를 의미
+<ul>
+<li>예로, 서비스 사용자와 시스템 관리자 또는 판매자와 구매자 등을 의미</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="유즈케이스-다이어그램">유즈케이스 다이어그램<a href="#유즈케이스-다이어그램" class="anchor" aria-hidden="true">#</a> </h3>
+<ul>
+<li>간단한 온라인 식물 쇼핑몰에 대한 유즈케이스 다이어그램 예제</li>
+</ul>
+<figure>
+    <img src="/ox-hugo/plantuml-usecase.png"/> 
+</figure>
+
+<h2 id="유즈케이스-다이어그램-그리기">유즈케이스 다이어그램 그리기<a href="#유즈케이스-다이어그램-그리기" class="anchor" aria-hidden="true">#</a> </h2>
+<ul>
+<li><a class="link" href="https://plantuml.com/ko/"  target="_blank" rel="noopener"
+    >Plant UML</a> 을 이용하여 간단하게 그릴 수 있음.</li>
+</ul>
+<h3 id="사용자-및-기능-정의">사용자 및 기능 정의<a href="#사용자-및-기능-정의" class="anchor" aria-hidden="true">#</a> </h3>
+<ul>
+<li>시스템 관점에서의 사용자 타입 정의</li>
+<li>각 사용자 관점에서의 기능 정의</li>
+</ul>
+<!--listend-->
+<pre><code class="language-plantuml" data-lang="plantuml">@startuml
+skinparam backgroundcolor transparent
+
+:서비스 사용자:  as user &lt;&lt; User &gt;&gt;
+:시스템 관리자:  as adm &lt;&lt; Admin &gt;&gt;
+
+(회원가입) as su
+(로그인) as si
+(식물구경) as po
+(식물구매) as pp
+(장바구니) as bk
+(식물업로드) as pu
+(결제) as pay
+(결제내역 확인) as pl
+(배송 조회) as delivery
+
+@enduml
+</code></pre><figure>
+    <img src="/ox-hugo/plantuml-usecase-comps.png"/> 
+</figure>
+
+<h4 id="문법-설명">문법 설명<a href="#문법-설명" class="anchor" aria-hidden="true">#</a> </h4>
+<ul>
+<li><code>skinparam backgroundcolor transparent</code> 는 배경색을 투명으로 설정</li>
+<li><code>:사용자 타입:</code> 콜론을 중심으로 사용자의 이름을 입력
+<ul>
+<li><code>as xx</code> 는 정의된 사용자를 뒤에서는 <code>xx</code> 라는 키워드로 사용</li>
+<li><code>&lt;&lt; type &gt;&gt;</code> 추가적인 사용자에 대한 설명
+<ul>
+<li><code>skinparam</code> 을 통해서 이 타입에 따라 스타일 적용 가능</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>(기능이름)</code> 괄호 안에 기능 이름을 입력
+<ul>
+<li><code>as xx</code> 는 정의된 사용자를 뒤에서는 <code>xx</code> 라는 키워드로 사용</li>
+</ul>
+</li>
+</ul>
+<h3 id="기능-카테고리-정의">기능 카테고리 정의<a href="#기능-카테고리-정의" class="anchor" aria-hidden="true">#</a> </h3>
+<ul>
+<li>기능을 카테고리화 하여 추상화
+<ul>
+<li>전체 기능의 관계나 사용자 관점에서의 큰 그림을 잘 보기 위한 목적</li>
+</ul>
+</li>
+</ul>
+<!--listend-->
+<pre><code class="language-plantuml" data-lang="plantuml">@startuml
+skinparam backgroundcolor transparent
+
+:서비스 사용자:  as user &lt;&lt; User &gt;&gt;
+:시스템 관리자:  as adm &lt;&lt; Admin &gt;&gt;
+
+rectangle &quot;사용자 관리&quot; {
+        (회원가입) as su
+        (로그인) as si
+}
+
+rectangle &quot;식물 관리&quot; {
+        (식물구경) as po
+        (식물구매) as pp
+        (장바구니) as bk
+        (식물업로드) as pu
+}
+rectangle &quot;주문 관리&quot; {
+        (결제) as pay
+        (결제내역 확인) as pl
+        (배송 조회) as delivery
+}
+@enduml
+</code></pre><figure>
+    <img src="/ox-hugo/plantuml-usecase-cat.png"/> 
+</figure>
+
+<h4 id="문법-설명">문법 설명<a href="#문법-설명" class="anchor" aria-hidden="true">#</a> </h4>
+<ul>
+<li><code>rectangle</code> 은 박스를 그려주며, 안에 기능을 정의할 수 있도록 함.</li>
+</ul>
+<h3 id="사용자와-기능간의-관계-정의">사용자와 기능간의 관계 정의<a href="#사용자와-기능간의-관계-정의" class="anchor" aria-hidden="true">#</a> </h3>
+<ul>
+<li>각 사용자 관점에서 어떤 기능을 사용할 수 있을지 관계 정의</li>
+</ul>
+<!--listend-->
+<pre><code class="language-plantuml" data-lang="plantuml">@startuml
+skinparam backgroundcolor transparent
+
+:서비스 사용자:  as user &lt;&lt; User &gt;&gt;
+:시스템 관리자:  as adm &lt;&lt; Admin &gt;&gt;
+
+rectangle &quot;사용자 관리&quot; {
+        (회원가입) as su
+        (로그인) as si
+}
+
+rectangle &quot;식물 관리&quot; {
+        (식물구경) as po
+        (식물구매) as pp
+        (장바구니) as bk
+        (식물업로드) as pu
+}
+rectangle &quot;주문 관리&quot; {
+        (결제) as pay
+        (결제내역 확인) as pl
+        (배송 조회) as delivery
+}
+
+user --&gt; su
+user --&gt; si
+user --&gt; pp
+user --&gt; po
+user --&gt; bk
+user --&gt; delivery
+
+adm --&gt; pu
+adm --&gt; pl
+
+@enduml
+</code></pre><figure>
+    <img src="/ox-hugo/plantuml-usecase-urel.png"/> 
+</figure>
+
+<h4 id="문법-설명">문법 설명<a href="#문법-설명" class="anchor" aria-hidden="true">#</a> </h4>
+<ul>
+<li><code>--&gt;</code> 실선 화살표로 관계 정의
+<ul>
+<li><code>-right-&gt;</code>, <code>-left-&gt;</code>, <code>-up-&gt;</code>, <code>-down-&gt;</code> 등으로 방향을 나타낼 수 있음.</li>
+</ul>
+</li>
+</ul>
+<h3 id="기능간의-관계-정의">기능간의 관계 정의<a href="#기능간의-관계-정의" class="anchor" aria-hidden="true">#</a> </h3>
+<ul>
+<li>사용자 관점에서 기능을 사용할 때, 상호동작할 수 있는 기능간의 관계 정의</li>
+</ul>
+<!--listend-->
+<pre><code class="language-plantuml" data-lang="plantuml">@startuml
+skinparam backgroundcolor transparent
+
+:서비스 사용자:  as user &lt;&lt; User &gt;&gt;
+:시스템 관리자:  as adm &lt;&lt; Admin &gt;&gt;
+
+rectangle &quot;사용자 관리&quot; {
+        (회원가입) as su
+        (로그인) as si
+}
+
+rectangle &quot;식물 관리&quot; {
+        (식물구경) as po
+        (식물구매) as pp
+        (장바구니) as bk
+        (식물업로드) as pu
+}
+rectangle &quot;주문 관리&quot; {
+        (결제) as pay
+        (결제내역 확인) as pl
+        (배송 조회) as delivery
+}
+
+user --&gt; su
+user --&gt; si
+user --&gt; pp
+user --&gt; po
+user --&gt; bk
+user --&gt; delivery
+
+adm --&gt; pu
+adm --&gt; pl
+
+su ..&gt; si
+bk ..&gt; pp
+su ..&gt; si
+pp ..&gt; pay: 결제 정보
+bk ..&gt; pay: 식물 목록 및 결제 정보
+pu ..&gt; po
+
+@enduml
+</code></pre><figure>
+    <img src="/ox-hugo/plantuml-usecase-frel.png"/> 
+</figure>
+
+<h4 id="문법-설명">문법 설명<a href="#문법-설명" class="anchor" aria-hidden="true">#</a> </h4>
+<ul>
+<li><code>..&gt;</code> 실선 화살표로 관계 정의
+<ul>
+<li>동일하게 방향을 적용할 수 있음.</li>
+<li><code>..&gt;: 설명</code> 콜론 구분자를 통해서 추가적인 설명</li>
+</ul>
+</li>
+</ul>
+
+			<div class="docs-navigation d-flex justify-content-between">
+	
+	<a class="ml-auto" href="https://www.hackartist.io/design/introduction/">
+			<div class="card my-1">
+				<div class="card-body py-2">
+					Design &rarr;
+				</div>
+			</div>
+		</a>
+	</div>
+
+		</main>
+	</div>
+
+      </div>
+    </div>
+    
+    
+    <footer class="footer text-muted">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 order-last order-lg-first">
+        <ul class="list-inline">
+          <li class="list-inline-item">Written by <a href="https://github.com/hackartists/">Hackartists</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-8 order-first order-lg-last text-lg-right">
+        <ul class="list-inline">
+          </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+    
+    <script src="https://www.hackartist.io/main.3ad44c88a44a6b3565c5e8c0ce56d40eda8d8e6ad8851feaec0d7b6086558f92673baefa3da37eda4122378c781e70c502dd44de30d6952ded1434465895eebf.js" integrity="sha512-OtRMiKRKazVlxejAzlbUDtqNjmrYhR/q7A17YIZVj5JnO676PaN&#43;2kEiN4x4HnDFAt1E3jDWlS3tFDRGWJXuvw==" crossorigin="anonymous" defer></script>
+  <script src="https://www.hackartist.io/index.min.2c870c8cafebe1d4985c84650f6732b7dbeb97092c016f634599b6fe012b5e70abbc080b1ea4fd7f8602b9ff09b370f5f32c095b3505bb04422fc62409804123.js" integrity="sha512-LIcMjK/r4dSYXIRlD2cyt9vrlwksAW9jRZm2/gErXnCrvAgLHqT9f4YCuf8Js3D18ywJWzUFuwRCL8YkCYBBIw==" crossorigin="anonymous" defer></script>
+
+  </body>
+</html>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hackartist&#39;s Technical Documentation on </title>
+    <link>https://www.hackartist.io/</link>
+    <description>Recent content in Hackartist&#39;s Technical Documentation on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-KR</language>
+    
+        <atom:link href="https://www.hackartist.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Blogs</title>
+      <link>https://www.hackartist.io/blog/</link>
+      <pubDate>Thu, 03 Feb 2022 22:09:47 +0900</pubDate>
+      
+      <guid>https://www.hackartist.io/blog/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ops</title>
+      <link>https://www.hackartist.io/ops/</link>
+      <pubDate>Thu, 03 Feb 2022 22:09:44 +0900</pubDate>
+      
+      <guid>https://www.hackartist.io/ops/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Devels</title>
+      <link>https://www.hackartist.io/devel/</link>
+      <pubDate>Thu, 03 Feb 2022 22:09:41 +0900</pubDate>
+      
+      <guid>https://www.hackartist.io/devel/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Designs</title>
+      <link>https://www.hackartist.io/design/</link>
+      <pubDate>Thu, 03 Feb 2022 22:09:35 +0900</pubDate>
+      
+      <guid>https://www.hackartist.io/design/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Infras</title>
+      <link>https://www.hackartist.io/infra/</link>
+      <pubDate>Thu, 03 Feb 2022 22:09:16 +0900</pubDate>
+      
+      <guid>https://www.hackartist.io/infra/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Posts</title>
+      <link>https://www.hackartist.io/posts/</link>
+      <pubDate>Wed, 01 Sep 2021 17:32:54 +0900</pubDate>
+      
+      <guid>https://www.hackartist.io/posts/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Emacs</title>
+      <link>https://www.hackartist.io/emacs/</link>
+      <pubDate>Tue, 02 Mar 2021 05:46:00 +0900</pubDate>
+      
+      <guid>https://www.hackartist.io/emacs/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

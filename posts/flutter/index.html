@@ -1,0 +1,1450 @@
+<!doctype html>
+<html lang="ko-KR">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-site-verification" content="tNCBNDAHu7WCNK0UMGcP3wGpc2QbFHHjdkVZWtaC1RA" />
+
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='Mobile Development with Flutter'>
+<meta property='og:description' content='Introduction  구글에서 개발한 모바일, 웹, 데스크탑 등을 위한 UI 개발 프레임워크  싱글 코드 기반으로 모든 플랫폼의 UI 개발을 지향   Dart 프로그래밍 언어를 사용하여 개발함    Setup an Environment Flutter CLI 설치  flutter 컴파일을 위한 프로그램 설치   yay -S flutter brew install flutter Android 환경 설치  Downloading AdoptOpenJDK version 8   brew install adopt-openjdk yay -S jdk-openjdk  Downloading Android SDK   brew install android-sdk yay -S android-sdk android-sdk-platform-tools  Installing Android SDK into the PC   unzip commandlinetools-linux-6200805_latest.'>
+<meta property='og:url' content='https://www.hackartist.io/posts/flutter/'>
+<meta property='og:site_name' content=''>
+<meta property='og:type' content='article'><meta property='article:section' content='Posts' /><meta property='article:published_time' content='2021-09-01T17:32:54&#43;09:00'/><meta property='article:modified_time' content='2021-09-02T08:07:53&#43;09:00'/>
+<meta name="twitter:title" content="Mobile Development with Flutter">
+<meta name="twitter:description" content="Introduction  구글에서 개발한 모바일, 웹, 데스크탑 등을 위한 UI 개발 프레임워크  싱글 코드 기반으로 모든 플랫폼의 UI 개발을 지향   Dart 프로그래밍 언어를 사용하여 개발함    Setup an Environment Flutter CLI 설치  flutter 컴파일을 위한 프로그램 설치   yay -S flutter brew install flutter Android 환경 설치  Downloading AdoptOpenJDK version 8   brew install adopt-openjdk yay -S jdk-openjdk  Downloading Android SDK   brew install android-sdk yay -S android-sdk android-sdk-platform-tools  Installing Android SDK into the PC   unzip commandlinetools-linux-6200805_latest."><link rel="preload" as="font" href="https://www.hackartist.io/fonts/vendor/jost/jost-v4-latin-regular.woff2" type="font/woff2" crossorigin>
+<link rel="preload" as="font" href="https://www.hackartist.io/fonts/vendor/jost/jost-v4-latin-700.woff2" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="https://www.hackartist.io/main.513b91602f78c359f8752f7fa109ef93113e4260c94cbd02252baca81058a5091ebc8580b506aff8de6f7c64daf29ec9317fd0cb7e305e5fce8935bd40323445.css" integrity="sha512-UTuRYC94w1n4dS9/oQnvkxE&#43;QmDJTL0CJSusqBBYpQkevIWAtQav&#43;N5vfGTa8p7JMX/Qy34wXl/OiTW9QDI0RQ==" crossorigin="anonymous">
+<noscript><style>img.lazyload { display: none; }</style></noscript>
+  <meta name="robots" content="index, follow">
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <title>Mobile Development with Flutter - Hackartist&#39;s Tech Site</title>
+<meta name="description" content="Hackartist&#39;s technical site">
+<link rel="canonical" href="https://www.hackartist.io/posts/flutter/">
+<meta name="twitter:card" content="summary_large_image">
+      <meta name="twitter:image" content="https://www.hackartist.io/doks.png">
+    <meta name="twitter:title" content="Mobile Development with Flutter">
+<meta name="twitter:description" content="Introduction  구글에서 개발한 모바일, 웹, 데스크탑 등을 위한 UI 개발 프레임워크  싱글 코드 기반으로 모든 플랫폼의 UI 개발을 지향   Dart 프로그래밍 언어를 사용하여 개발함    Setup an Environment Flutter CLI 설치  flutter 컴파일을 위한 프로그램 설치   yay -S flutter brew install flutter Android 환경 설치  Downloading AdoptOpenJDK version 8   brew install adopt-openjdk yay -S jdk-openjdk  Downloading Android SDK   brew install android-sdk yay -S android-sdk android-sdk-platform-tools  Installing Android SDK into the PC   unzip commandlinetools-linux-6200805_latest.">
+
+<meta name="twitter:site" content="@">
+<meta name="twitter:creator" content="@">
+
+<meta property="og:title" content="Mobile Development with Flutter">
+<meta property="og:description" content="Introduction  구글에서 개발한 모바일, 웹, 데스크탑 등을 위한 UI 개발 프레임워크  싱글 코드 기반으로 모든 플랫폼의 UI 개발을 지향   Dart 프로그래밍 언어를 사용하여 개발함    Setup an Environment Flutter CLI 설치  flutter 컴파일을 위한 프로그램 설치   yay -S flutter brew install flutter Android 환경 설치  Downloading AdoptOpenJDK version 8   brew install adopt-openjdk yay -S jdk-openjdk  Downloading Android SDK   brew install android-sdk yay -S android-sdk android-sdk-platform-tools  Installing Android SDK into the PC   unzip commandlinetools-linux-6200805_latest.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.hackartist.io/posts/flutter/">
+
+  <meta property="og:image" content="https://www.hackartist.io/doks.png"/>
+    <meta property="article:published_time" content="2021-09-01T17:32:54+09:00">
+  <meta property="article:modified_time" content="2021-09-02T08:07:53+09:00">
+  <meta property="og:site_name" content="Hackartist&#39;s Tech Site">
+
+<meta property="article:publisher" content="https://www.facebook.com/">
+<meta property="article:author" content="https://www.facebook.com/">
+<meta property="og:locale" content="en_US">
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position":  1 ,
+        "name": "Home",
+        "item": "https:\/\/www.hackartist.io"
+    },{
+        "@type": "ListItem",
+        "position":  3 ,
+        "name": "Posts",
+        "item": "https:\/\/www.hackartist.io\/posts\/"
+    },{
+        "@type": "ListItem",
+        "position":  4 ,
+        "name": "Flutter",
+        "item": "https:\/\/www.hackartist.io\/posts\/flutter\/"
+    }]
+}
+</script>
+
+  <meta name="theme-color" content="#fff">
+<link rel="apple-touch-icon" sizes="180x180" href="https://www.hackartist.io/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://www.hackartist.io/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://www.hackartist.io/favicon-16x16.png">
+<link rel="manifest" href="https://www.hackartist.io/site.webmanifest">
+  
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3L5TX41ECT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-3L5TX41ECT');
+</script>
+<script data-ad-client="ca-pub-5079369906312917" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+</head>
+
+  <body class="posts single">
+    <div class="header-bar fixed-top"></div>
+<header class="navbar fixed-top navbar-expand-md navbar-light">
+  <div class="container">
+    <input class="menu-btn order-0" type="checkbox" id="menu-btn">
+    <label class="menu-icon d-md-none" for="menu-btn"><span class="navicon"></span></label>
+    <a class="navbar-brand order-1 order-md-0 mr-auto" href="https://www.hackartist.io/">Hackartist&#39;s Tech Site</a>
+    <button id="mode" class="btn btn-link order-2 order-md-4" type="button" aria-label="Toggle mode">
+      <span class="toggle-dark"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></span>
+      <span class="toggle-light"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sun"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg></span>
+    </button>
+    <ul class="navbar-nav social-nav order-3 order-md-5">
+      <li class="nav-item">
+          <a class="nav-link" href="https://github.com/hackartists/hackartists.github.io"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg><span class="ml-2 sr-only">GitHub</span></a>
+        </li>
+      </ul>
+    <div class="collapse navbar-collapse order-4 order-md-1">
+      <ul class="navbar-nav main-nav mr-auto order-5 order-md-2"><li class="nav-item">
+            <a class="nav-link" href="https://www.hackartist.io/infra/introduction">Infrastructure</a>
+          </li>
+        <li class="nav-item">
+            <a class="nav-link" href="https://www.hackartist.io/design/introduction">Design</a>
+          </li>
+        <li class="nav-item">
+            <a class="nav-link" href="https://www.hackartist.io/devel/introduction">Development</a>
+          </li>
+        <li class="nav-item">
+            <a class="nav-link" href="https://www.hackartist.io/ops/introduction">Testing&amp;Operation</a>
+          </li>
+        <li class="nav-item">
+            <a class="nav-link" href="https://www.hackartist.io/emacs/introduction">Emacs</a>
+          </li>
+        <li class="nav-item">
+            <a class="nav-link" href="https://www.hackartist.io/blog/">Blog</a>
+          </li>
+        </ul>
+      <div class="break order-6 d-md-none"></div>
+      <form class="navbar-form flex-grow-1 order-7 order-md-3">
+        <input id="userinput" class="form-control is-search" type="search" placeholder="Search docs..." aria-label="Search docs..." autocomplete="off">
+        <div id="suggestions" class="shadow bg-white rounded"></div>
+      </form>
+    </div>
+  </div>
+</header>
+
+    <div class="wrap container" role="document">
+      <div class="content">
+        
+  <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/devel/" >
+                devel
+            </a>
+        
+            <a href="/categories/flutter/" >
+                flutter
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/posts/flutter/">Mobile Development with Flutter</a>
+    </h2>
+
+    <footer class="article-time">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <time class="article-time--published">Sep 01, 2021</time>
+    </footer></div>
+</header>
+
+    <section class="article-content">
+    <h2 id="introduction">Introduction</h2>
+<ul>
+<li>구글에서 개발한 모바일, 웹, 데스크탑 등을 위한 UI 개발 프레임워크
+<ul>
+<li>싱글 코드 기반으로 모든 플랫폼의 UI 개발을 지향</li>
+</ul>
+</li>
+<li>Dart 프로그래밍 언어를 사용하여 개발함</li>
+</ul>
+<figure>
+    <img src="/ox-hugo/2021-08-31_23-04-21_screenshot.png"/> 
+</figure>
+
+<h2 id="setup-an-environment">Setup an Environment</h2>
+<h3 id="flutter-cli-설치">Flutter CLI 설치</h3>
+<ul>
+<li>flutter 컴파일을 위한 프로그램 설치</li>
+</ul>
+<!--listend-->
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">yay -S flutter
+brew install flutter
+</code></pre></div><h3 id="android-환경-설치">Android 환경 설치</h3>
+<ul>
+<li>Downloading <a class="link" href="https://adoptopenjdk.net/"  target="_blank" rel="noopener"
+    >AdoptOpenJDK</a> version 8</li>
+</ul>
+<!--listend-->
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">brew install adopt-openjdk
+yay -S jdk-openjdk
+</code></pre></div><ul>
+<li>Downloading <a class="link" href="https://dl.google.com/android/repository/commandlinetools-linux-6200805%5Flatest.zip"  target="_blank" rel="noopener"
+    >Android SDK</a></li>
+</ul>
+<!--listend-->
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">brew install android-sdk
+yay -S android-sdk android-sdk-platform-tools
+</code></pre></div><ul>
+<li>Installing Android SDK into the PC</li>
+</ul>
+<!--listend-->
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">unzip commandlinetools-linux-6200805_latest.zip
+<span class="nb">cd</span> tools
+<span class="nb">export</span> <span class="nv">ANDROID_HOME</span><span class="o">=</span><span class="s2">&#34;path-to-install-sdk&#34;</span>
+bin/sdkmanager --sdk_root<span class="o">=</span><span class="nv">$ANDROID_HOME</span> <span class="s2">&#34;tools&#34;</span>
+<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="s2">&#34;</span><span class="nv">$ANDROID_HOME</span><span class="s2">/tools/bin:</span><span class="nv">$ANDROID_HOME</span><span class="s2">/tools:</span><span class="nv">$ANDROID_HOME</span><span class="s2">/emulator:</span><span class="nv">$ANDROID_HOME</span><span class="s2">/platform-tools:</span><span class="nv">$PATH</span><span class="s2">&#34;</span>
+mkdir ~/.android
+touch ~/.android/repositories.cfg
+sdkmanager <span class="s2">&#34;build-tools;28.0.3&#34;</span> <span class="s2">&#34;platforms;android-28&#34;</span>
+</code></pre></div><h3 id="android-emulator-설정">Android Emulator 설정</h3>
+<ul>
+<li>Installing AVD targets and running an emulator</li>
+</ul>
+<!--listend-->
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">sdkmanager <span class="s2">&#34;system-images;android-28;google_apis;x86_64&#34;</span> <span class="s2">&#34;system-images;android-28;google_apis;x86&#34;</span>
+avdmanager create avd --package <span class="s2">&#34;system-images;android-28;google_apis;x86_64&#34;</span> --name android-28
+avdmanager list avd
+emulator @android-28
+</code></pre></div><h3 id="android-emulator-설정-확인">Android Emulator 설정 확인</h3>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">flutter emulators
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="m">2</span> available emulators:
+
+luffy • luffy • Google • android
+zoro  • zoro  • Google • android
+
+To run an emulator, run <span class="s1">&#39;flutter emulators --launch &lt;emulator id&gt;&#39;</span>.
+To create a new emulator, run <span class="s1">&#39;flutter emulators --create [--name xyz]&#39;</span>.
+
+You can find more information on managing emulators at the links below:
+  https://developer.android.com/studio/run/managing-avds
+  https://developer.android.com/studio/command-line/avdmanager
+</code></pre></div><h3 id="android-emulator-실행-및-확인">Android Emulator 실행 및 확인</h3>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">flutter emulators --launch luffy
+flutter devices
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="m">3</span> connected devices:
+
+Android SDK built <span class="k">for</span> x86 <span class="o">(</span>mobile<span class="o">)</span> • emulator-5554 • android-x86    • Android 8.1.0 <span class="o">(</span>API 27<span class="o">)</span> <span class="o">(</span>emulator<span class="o">)</span>
+Linux <span class="o">(</span>desktop<span class="o">)</span>                    • linux         • linux-x64      • Linux
+Chrome <span class="o">(</span>web<span class="o">)</span>                       • chrome        • web-javascript • Google Chrome 92.0.4515.159
+</code></pre></div><h2 id="flutter-개발">Flutter 개발</h2>
+<h3 id="기본-프로젝트-생성">기본 프로젝트 생성</h3>
+<ul>
+<li>프로젝트 이름은 dart 의 패키지 이름 컨벤션에 따라야함.
+<ul>
+<li>알파벳과 <code>_</code> 를 사용할수 있음.</li>
+<li><code>-</code> 는 사용할 수 없음</li>
+</ul>
+</li>
+</ul>
+<!--listend-->
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">flutter create simpleapp
+</code></pre></div><h3 id="기본-프로젝트-구조">기본 프로젝트 구조</h3>
+<ul>
+<li>디렉토리 구조가 복잡해보이지만 main.dart 만 집중하면 됨.</li>
+</ul>
+<!--listend-->
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">tree simpleapp -L <span class="m">3</span>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">/home/hackartist/data/devel/github.com/hackartists/test/simpleapp
+├── android
+│   ├── app
+│   │   ├── build.gradle
+│   │   └── src
+│   ├── build.gradle
+│   ├── gradle
+│   │   └── wrapper
+│   ├── gradle.properties
+│   ├── gradlew
+│   ├── gradlew.bat
+│   ├── local.properties
+│   ├── settings.gradle
+│   └── simpleapp_android.iml
+├── ios
+│   ├── Flutter
+│   │   ├── AppFrameworkInfo.plist
+│   │   ├── Debug.xcconfig
+│   │   ├── flutter_export_environment.sh
+│   │   ├── Generated.xcconfig
+│   │   └── Release.xcconfig
+│   ├── Runner
+│   │   ├── AppDelegate.swift
+│   │   ├── Assets.xcassets
+│   │   ├── Base.lproj
+│   │   ├── GeneratedPluginRegistrant.h
+│   │   ├── GeneratedPluginRegistrant.m
+│   │   ├── Info.plist
+│   │   └── Runner-Bridging-Header.h
+│   ├── Runner.xcodeproj
+│   │   ├── project.pbxproj
+│   │   ├── project.xcworkspace
+│   │   └── xcshareddata
+│   └── Runner.xcworkspace
+│       ├── contents.xcworkspacedata
+│       └── xcshareddata
+├── lib
+│   └── main.dart
+├── linux
+│   ├── CMakeLists.txt
+│   ├── flutter
+│   │   ├── CMakeLists.txt
+│   │   ├── generated_plugin_registrant.cc
+│   │   ├── generated_plugin_registrant.h
+│   │   └── generated_plugins.cmake
+│   ├── main.cc
+│   ├── my_application.cc
+│   └── my_application.h
+├── pubspec.lock
+├── pubspec.yaml
+├── README.md
+├── simpleapp.iml
+├── <span class="nb">test</span>
+│   └── widget_test.dart
+└── web
+    ├── favicon.png
+    ├── icons
+    │   ├── Icon-192.png
+    │   └── Icon-512.png
+    ├── index.html
+    └── manifest.json
+
+<span class="m">21</span> directories, <span class="m">39</span> files
+</code></pre></div><h3 id="deep-dive-into-flutter">Deep Dive into Flutter</h3>
+<!--list-separator-->
+<ul>
+<li>
+<p>Android 실행</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">flutter run -d android
+</code></pre></div><figure>
+    <img src="/ox-hugo/2021-08-31_23-38-47_screenshot.png" width="200px"/> 
+</figure>
+
+</li>
+</ul>
+<!--list-separator-->
+<ul>
+<li>
+<p><code>lib/main.dart</code></p>
+<pre><code class="language-flutter" data-lang="flutter">import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        // This is the theme of your application.
+        //
+        // Try running your application with &quot;flutter run&quot;. You'll see the
+        // application has a blue toolbar. Then, without quitting the app, try
+        // changing the primarySwatch below to Colors.green and then invoke
+        // &quot;hot reload&quot; (press &quot;r&quot; in the console where you ran &quot;flutter run&quot;,
+        // or simply save your changes to &quot;hot reload&quot; in a Flutter IDE).
+        // Notice that the counter didn't reset back to zero; the application
+        // is not restarted.
+        primarySwatch: Colors.blue,
+      ),
+      home: MyHomePage(title: 'Flutter Demo Home Page'),
+    );
+  }
+}
+
+class MyHomePage extends StatefulWidget {
+  MyHomePage({Key? key, required this.title}) : super(key: key);
+
+  // This widget is the home page of your application. It is stateful, meaning
+  // that it has a State object (defined below) that contains fields that affect
+  // how it looks.
+
+  // This class is the configuration for the state. It holds the values (in this
+  // case the title) provided by the parent (in this case the App widget) and
+  // used by the build method of the State. Fields in a Widget subclass are
+  // always marked &quot;final&quot;.
+
+  final String title;
+
+  @override
+  _MyHomePageState createState() =&gt; _MyHomePageState();
+}
+
+class _MyHomePageState extends State&lt;MyHomePage&gt; {
+  int _counter = 0;
+
+  void _incrementCounter() {
+    setState(() {
+      // This call to setState tells the Flutter framework that something has
+      // changed in this State, which causes it to rerun the build method below
+      // so that the display can reflect the updated values. If we changed
+      // _counter without calling setState(), then the build method would not be
+      // called again, and so nothing would appear to happen.
+      _counter++;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    // This method is rerun every time setState is called, for instance as done
+    // by the _incrementCounter method above.
+    //
+    // The Flutter framework has been optimized to make rerunning build methods
+    // fast, so that you can just rebuild anything that needs updating rather
+    // than having to individually change instances of widgets.
+    return Scaffold(
+      appBar: AppBar(
+        // Here we take the value from the MyHomePage object that was created by
+        // the App.build method, and use it to set our appbar title.
+        title: Text(widget.title),
+      ),
+      body: Center(
+        // Center is a layout widget. It takes a single child and positions it
+        // in the middle of the parent.
+        child: Column(
+          // Column is also a layout widget. It takes a list of children and
+          // arranges them vertically. By default, it sizes itself to fit its
+          // children horizontally, and tries to be as tall as its parent.
+          //
+          // Invoke &quot;debug painting&quot; (press &quot;p&quot; in the console, choose the
+          // &quot;Toggle Debug Paint&quot; action from the Flutter Inspector in Android
+          // Studio, or the &quot;Toggle Debug Paint&quot; command in Visual Studio Code)
+          // to see the wireframe for each widget.
+          //
+          // Column has various properties to control how it sizes itself and
+          // how it positions its children. Here we use mainAxisAlignment to
+          // center the children vertically; the main axis here is the vertical
+          // axis because Columns are vertical (the cross axis would be
+          // horizontal).
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: &lt;Widget&gt;[
+            Text(
+              'You have pushed the button this many times:',
+            ),
+            Text(
+              '$_counter',
+              style: Theme.of(context).textTheme.headline4,
+            ),
+          ],
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: _incrementCounter,
+        tooltip: 'Increment',
+        child: Icon(Icons.add),
+      ), // This trailing comma makes auto-formatting nicer for build methods.
+    );
+  }
+}
+</code></pre></li>
+</ul>
+<h2 id="kas-tutorial">KAS Tutorial</h2>
+<h3 id="kas-tutorial-메인-페이지">KAS Tutorial 메인 페이지</h3>
+<figure>
+    <img src="/ox-hugo/2021-08-31_23-49-26_screenshot.png" width="300px"/> 
+</figure>
+
+<h3 id="코드-구조">코드 구조</h3>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">/home/hackartist/data/devel/github.com/hackartists/kas-tutorial-ui
+├── android
+│   ├── app
+│   │   ├── build.gradle
+│   │   └── src
+│   ├── build.gradle
+│   ├── gradle
+│   │   └── wrapper
+│   ├── gradle.properties
+│   ├── gradlew
+│   ├── gradlew.bat
+│   ├── kastutorial_android.iml
+│   ├── local.properties
+│   ├── settings_aar.gradle
+│   └── settings.gradle
+├── assets
+│   └── images
+│       ├── demo_img.png
+│       ├── demo_widget.png
+│       ├── klaytn-logo-green.png
+│       ├── profile_img.jpeg
+│       └── <span class="k">select</span>-image.png
+├── ios
+│   ├── Flutter
+│   │   ├── AppFrameworkInfo.plist
+│   │   ├── Debug.xcconfig
+│   │   ├── flutter_export_environment.sh
+│   │   ├── Generated.xcconfig
+│   │   └── Release.xcconfig
+│   ├── Podfile
+│   ├── Runner
+│   │   ├── AppDelegate.swift
+│   │   ├── Assets.xcassets
+│   │   ├── Base.lproj
+│   │   ├── GeneratedPluginRegistrant.h
+│   │   ├── GeneratedPluginRegistrant.m
+│   │   ├── Info.plist
+│   │   └── Runner-Bridging-Header.h
+│   ├── Runner.xcodeproj
+│   │   ├── project.pbxproj
+│   │   ├── project.xcworkspace
+│   │   └── xcshareddata
+│   └── Runner.xcworkspace
+│       ├── contents.xcworkspacedata
+│       └── xcshareddata
+├── kastutorial.iml
+├── lib
+│   ├── components
+│   │   ├── app_button.dart
+│   │   ├── list_cards.dart
+│   │   ├── nft_card.dart
+│   │   ├── safe_money_tile.dart
+│   │   ├── select_warrant_card.dart
+│   │   └── toast.dart
+│   ├── constants.dart
+│   ├── generated_plugin_registrant.dart
+│   ├── interfaces
+│   │   └── sqlite_model.dart
+│   ├── main.dart
+│   ├── models
+│   │   ├── klay_transfer.dart
+│   │   ├── nft_token.dart
+│   │   ├── safe.dart
+│   │   └── user.dart
+│   ├── screens
+│   │   ├── create_safe_money_screen.dart
+│   │   ├── home_screen.dart
+│   │   ├── issue_nft_screen.dart
+│   │   ├── klay_history_screen.dart
+│   │   ├── login_screen.dart
+│   │   ├── nft_home_screen.dart
+│   │   ├── safe_money_cards_screen.dart
+│   │   ├── safe_money_screen.dart
+│   │   ├── send_klay_screen.dart
+│   │   ├── send_nft_screen.dart
+│   │   └── sign_card_screen.dart
+│   ├── services
+│   │   └── client.dart
+│   ├── store
+│   │   ├── preference.dart
+│   │   └── sqlite.dart
+│   └── themes
+├── linux
+│   ├── CMakeLists.txt
+│   ├── flutter
+│   │   ├── CMakeLists.txt
+│   │   ├── ephemeral
+│   │   ├── generated_plugin_registrant.cc
+│   │   ├── generated_plugin_registrant.h
+│   │   └── generated_plugins.cmake
+│   ├── main.cc
+│   ├── my_application.cc
+│   └── my_application.h
+├── pubspec.lock
+├── pubspec.yaml
+├── README.html
+├── README.md
+├── run.sh
+├── <span class="nb">test</span>
+│   └── widget_test.dart
+└── web
+    ├── favicon.png
+    ├── icons
+    │   ├── Icon-192.png
+    │   └── Icon-512.png
+    ├── index.html
+    └── manifest.json
+
+<span class="m">31</span> directories, <span class="m">75</span> files
+</code></pre></div><h3 id="엔트리-코드">엔트리 코드</h3>
+<!--list-separator-->
+<ul>
+<li>
+<p><code>lib/main.dart</code></p>
+<pre><code class="language-flutter" data-lang="flutter">import 'package:flutter/material.dart';
+import 'package:kastutorial/store/preference.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart' as DotEnv;
+import 'package:kastutorial/store/sqlite.dart';
+
+import 'screens/home_screen.dart';
+import 'screens/login_screen.dart';
+
+Future main() async {
+  await DotEnv.load(fileName: '.env');
+  await Sqlite.initDatabase();
+  runApp(MyApp());
+}
+
+class MyApp extends StatefulWidget {
+  // This widget is the root of your application.
+  @override
+  _MyAppState createState() =&gt; _MyAppState();
+}
+
+class _MyAppState extends State&lt;MyApp&gt; {
+  String address;
+  String username;
+  String password;
+
+  @override
+  void initState() {
+    getAccountAddress();
+    super.initState();
+  }
+
+  getAccountAddress() async {
+    Preference.getAddress().then((value) =&gt; setState(() {
+          address = value;
+        }));
+    Preference.getUsername().then((value) =&gt; setState(() {
+          username = value;
+        }));
+    Preference.getPassword().then((value) =&gt; setState(() {
+          password = value;
+        }));
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'KAS Tutorial',
+      theme: ThemeData(
+        // brightness: Brightness.dark,
+        primarySwatch: Colors.deepPurple,
+        accentColor: Colors.orange,
+        textSelectionTheme: TextSelectionThemeData(cursorColor: Colors.orange),
+        // fontFamily: 'SourceSansPro',
+        textTheme: TextTheme(
+          headline3: TextStyle(
+            fontFamily: 'OpenSans',
+            fontSize: 45.0,
+            // fontWeight: FontWeight.w400,
+            color: Colors.orange,
+          ),
+          button: TextStyle(
+            // OpenSans is similar to NotoSans but the uppercases look a bit better IMO
+            fontFamily: 'OpenSans',
+          ),
+          caption: TextStyle(
+            fontFamily: 'NotoSans',
+            fontSize: 12.0,
+            fontWeight: FontWeight.normal,
+            color: Colors.deepPurple[300],
+          ),
+          headline1: TextStyle(fontFamily: 'Quicksand'),
+          headline2: TextStyle(fontFamily: 'Quicksand'),
+          headline4: TextStyle(fontFamily: 'Quicksand'),
+          headline5: TextStyle(fontFamily: 'NotoSans'),
+          headline6: TextStyle(fontFamily: 'NotoSans'),
+          subtitle1: TextStyle(fontFamily: 'NotoSans'),
+          bodyText1: TextStyle(fontFamily: 'NotoSans'),
+          bodyText2: TextStyle(fontFamily: 'NotoSans'),
+          subtitle2: TextStyle(fontFamily: 'NotoSans'),
+          overline: TextStyle(fontFamily: 'NotoSans'),
+        ),
+      ),
+      home: username != null &amp;&amp;
+              username != &quot;&quot; &amp;&amp;
+              password != null &amp;&amp;
+              password != &quot;&quot;
+          ? HomeScreen(username: username, password: password)
+          : LoginScreen(),
+      // navigatorObservers: [TransitionRouteObserver()],
+      // initialRoute: LoginScreen.routeName,
+      // routes: {
+      //   LoginScreen.routeName: (context) =&gt; LoginScreen(),
+      //   DashboardScreen.routeName: (context) =&gt; DashboardScreen(),
+      // },
+    );
+  }
+}
+
+</code></pre></li>
+</ul>
+<h3 id="홈-화면-구성">홈 화면 구성</h3>
+<ul>
+<li><code>lib/screens/home_screen.dart</code></li>
+</ul>
+<!--listend-->
+<pre><code class="language-flutter" data-lang="flutter">import 'dart:async';
+
+import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:kastutorial/components/app_button.dart';
+import 'package:kastutorial/screens/klay_history_screen.dart';
+import 'package:kastutorial/screens/nft_home_screen.dart';
+import 'package:kastutorial/screens/safe_money_screen.dart';
+import 'package:kastutorial/screens/send_klay_screen.dart';
+import 'package:kastutorial/services/client.dart';
+import 'package:kastutorial/store/preference.dart';
+
+class HomeScreen extends StatefulWidget {
+  final String username;
+  final String password;
+
+  HomeScreen({Key key, this.username, this.password}) : super(key: key);
+
+  @override
+  HomeScreenState createState() =&gt;
+      HomeScreenState(username: this.username, password: this.password);
+}
+
+class HomeScreenState extends State&lt;HomeScreen&gt; {
+  String username;
+  String password;
+  String address;
+  String balance;
+  static int interval;
+
+  HomeScreenState({this.username, this.password});
+
+  @override
+  void initState() {
+    setState(() {
+      this.balance = '-';
+    });
+    super.initState();
+    if (username != null) {
+      Client.getBalance(username).then((value) =&gt; setState(() {
+            this.balance = value;
+          }));
+    }
+
+    interval = int.parse(env['INTERVAL']);
+    Timer.periodic(new Duration(seconds: interval), (timer) async {
+      print(username);
+      String balance = await Client.getBalance(username);
+      setState(() {
+        this.balance = balance;
+      });
+    });
+
+    Preference.getUsername().then((value) =&gt; setState(() {
+          this.username = value;
+        }));
+
+    Preference.getPassword().then((value) =&gt; setState(() {
+          this.password = value;
+        }));
+
+    Preference.getAddress().then((value) =&gt; setState(() {
+          this.address = value;
+        }));
+  }
+
+  sendKlay() async {}
+
+  @override
+  Widget build(BuildContext context) {
+    final _width = MediaQuery.of(context).size.width;
+    final _height = MediaQuery.of(context).size.height;
+
+    return new Container(
+      child: new Stack(
+        children: &lt;Widget&gt;[
+          new Scaffold(
+            backgroundColor: Colors.transparent,
+            body: buildContainer(_height, _width),
+            floatingActionButton: FloatingActionButton(
+              tooltip: 'KLAY 전송',
+              onPressed: () {
+                Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) {
+                    return SendKlayScreen(user: this.username);
+                  },
+                ));
+              },
+              child: Icon(Icons.send),
+            ), // This trailing comma makes auto-formatting nicer for build methods.
+          ),
+        ],
+      ),
+    );
+  }
+
+  Container buildContainer(double _height, double _width) {
+    return new Container(
+      decoration: new BoxDecoration(),
+      child: new Stack(
+        children: &lt;Widget&gt;[
+          new Container(
+            decoration: new BoxDecoration(
+              borderRadius: BorderRadius.only(
+                bottomLeft: Radius.circular(40.0),
+                bottomRight: Radius.circular(40.0),
+              ),
+              gradient: new LinearGradient(
+                colors: [
+                  const Color(0xFFFFCBE6),
+                  const Color(0xFF26CBFF),
+                ],
+                begin: Alignment.topCenter,
+                end: Alignment.center,
+              ),
+            ),
+            child: new Align(
+              alignment: Alignment.center,
+              child: new Padding(
+                padding: new EdgeInsets.only(top: _height / 15),
+                child: buildProfile(_height),
+              ),
+            ),
+          ),
+          new Padding(
+            padding: new EdgeInsets.only(top: _height / 2.2),
+            child: new Container(
+              color: Colors.white,
+            ),
+          ),
+          new Padding(
+            padding: new EdgeInsets.only(
+              top: _height / 2.6,
+              left: _width / 20,
+              right: _width / 20,
+            ),
+            child: buildProfileInfo(_width),
+          ),
+          new Padding(
+            padding: new EdgeInsets.only(top: _height / 1.9),
+            child: Center(
+              widthFactor: _width,
+              child: Column(
+                children: [
+                  new Row(
+                    children: [
+                      Spacer(),
+                      AppButton(
+                        label: &quot;거래내역&quot;,
+                        icon: Icons.history,
+                        onPressed: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) {
+                                return KlayHistoryScreen(userId: this.username);
+                              },
+                            ),
+                          );
+                        },
+                      ),
+                      Spacer(),
+                      AppButton(
+                        label: &quot;자산&quot;,
+                        icon: Icons.card_giftcard,
+                        color: Colors.blueAccent,
+                        onPressed: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) {
+                                return NftHomeScreen(
+                                  username: username,
+                                );
+                              },
+                            ),
+                          );
+                        },
+                      ),
+                      Spacer(),
+                      AppButton(
+                        label: &quot;공동금고&quot;,
+                        icon: Icons.monetization_on,
+                        color: Colors.amberAccent,
+                        onPressed: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) {
+                                return SafeMoneyScreen(
+                                  userId: username,
+                                );
+                              },
+                            ),
+                          );
+                        },
+                      ),
+                      Spacer(),
+                      // AppButton(
+                      //   label: &quot;포인트&quot;,
+                      //   icon: Icons.credit_card,
+                      //   color: Colors.blueAccent,
+                      //   onPressed: () {},
+                      // ),
+                    ],
+                  ),
+                  new Row(
+                    children: [],
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Column buildProfileInfo(double _width) {
+    return new Column(
+      children: &lt;Widget&gt;[
+        new Container(
+          decoration: new BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.all(Radius.circular(40.0)),
+            boxShadow: [
+              new BoxShadow(
+                color: Colors.black45,
+                blurRadius: 2.0,
+                offset: new Offset(0.0, 2.0),
+              )
+            ],
+          ),
+          child: new Padding(
+            padding: new EdgeInsets.all(_width / 20),
+            child: new Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: &lt;Widget&gt;[
+                  headerChild('KLAY', this.balance),
+                  // headerChild('Followers', 1205),
+                  // headerChild('Following', 360),
+                ]),
+          ),
+        ),
+        // buildPadding(_height, _width)
+      ],
+    );
+  }
+
+  Column buildProfile(double _height) {
+    return new Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: &lt;Widget&gt;[
+        new CircleAvatar(
+          backgroundColor: Colors.transparent,
+          backgroundImage:
+              new AssetImage('assets/images/klaytn-logo-green.png'),
+          radius: _height / 10,
+        ),
+        new SizedBox(
+          height: _height / 30,
+        ),
+        new Text(
+          this.username,
+          style: new TextStyle(
+              fontSize: 18.0, color: Colors.white, fontWeight: FontWeight.bold),
+        )
+      ],
+    );
+  }
+
+  Widget headerChild(String header, String value) =&gt; new Expanded(
+          child: new Column(
+        children: &lt;Widget&gt;[
+          new Text(header),
+          new SizedBox(
+            height: 8.0,
+          ),
+          new Text(
+            '$value',
+            style: new TextStyle(
+                fontSize: 14.0,
+                color: const Color(0xFF26CBE6),
+                fontWeight: FontWeight.bold),
+          )
+        ],
+      ));
+
+  Widget infoChild(double width, IconData icon, data) =&gt; new Padding(
+        padding: new EdgeInsets.only(bottom: 8.0),
+        child: new InkWell(
+          child: new Row(
+            children: &lt;Widget&gt;[
+              new SizedBox(
+                width: width / 10,
+              ),
+              new Icon(
+                icon,
+                color: const Color(0xFF26CBE6),
+                size: 36.0,
+              ),
+              new SizedBox(
+                width: width / 20,
+              ),
+              new Text(data)
+            ],
+          ),
+          onTap: () {
+            print('Info Object selected');
+          },
+        ),
+      );
+}
+
+</code></pre><h3 id="api-호출-방법">API 호출 방법</h3>
+<ul>
+<li><code>lib/services/client.dart</code></li>
+</ul>
+<!--listend-->
+<pre><code class="language-flutter" data-lang="flutter">import 'dart:convert';
+
+import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:http/http.dart' as http;
+import 'package:kastutorial/models/klay_transfer.dart';
+import 'package:kastutorial/models/nft_token.dart';
+import 'package:kastutorial/models/safe.dart';
+import 'package:kastutorial/models/user.dart';
+
+class Client {
+  static final endpoint = env['CLIENT_URL'];
+
+  static Future&lt;User&gt; loginUser(String username, String password) async {
+    final response = await http.post(
+      Uri.http(endpoint, '/v1/user'),
+      headers: &lt;String, String&gt;{
+        'Content-Type': 'application/json; charset=UTF-8',
+      },
+      body: jsonEncode(&lt;String, String&gt;{
+        &quot;username&quot;: username,
+        &quot;password&quot;: password,
+      }),
+    );
+
+    if (response.statusCode == 200) {
+      print(response.body);
+      return User.fromJson(jsonDecode(response.body));
+    }
+
+    throw Exception('failed to sign in');
+  }
+
+  static Future&lt;String&gt; getBalance(String userid) async {
+    final response =
+        await http.get(Uri.http(endpoint, '/v1/user/$userid/klay'));
+
+    if (response.statusCode == 200) {
+      return jsonDecode(response.body)['balance'];
+    }
+
+    throw Exception('failed to get balance');
+  }
+
+  static Future&lt;String&gt; sendKlay(
+      String userid, String toUserid, String amount) async {
+    final response = await http.post(
+      Uri.http(endpoint, '/v1/user/$userid/klay'),
+      headers: &lt;String, String&gt;{
+        'Content-Type': 'application/json; charset=UTF-8',
+      },
+      body: jsonEncode(&lt;String, dynamic&gt;{
+        &quot;to&quot;: toUserid,
+        &quot;amount&quot;: amount,
+      }),
+    );
+
+    if (response.statusCode == 200) {
+      print(response.body);
+      return jsonDecode(response.body)['txHash'];
+    }
+
+    throw Exception('failed to send balance');
+  }
+
+  static Future&lt;List&gt; getSuggestions(String pattern) async {
+    final response = await http
+        .get(Uri.http(endpoint, &quot;/v1/search&quot;, {&quot;user-pattern&quot;: pattern}));
+
+    print(response.statusCode);
+    if (response.statusCode == 200) {
+      print(response.body);
+      return jsonDecode(response.body)['users'];
+    }
+
+    return [];
+  }
+
+  static Future&lt;List&lt;KlayTransfer&gt;&gt; getKlayHistory(
+      String userId, int start, int end) async {
+    final response = await http
+        .get(Uri.http(endpoint, &quot;/v1/user/$userId/klay/transfer-history&quot;, {
+      'start-timestamp': start.toString(),
+      'end-timestamp': end.toString(),
+    }));
+
+    print(response.statusCode);
+    List&lt;KlayTransfer&gt; ret = [];
+    if (response.statusCode == 200) {
+      List&lt;dynamic&gt; history = jsonDecode(response.body);
+
+      history.forEach((element) {
+        ret.add(KlayTransfer.fromJson(element));
+      });
+    }
+
+    return ret;
+  }
+
+  static Future&lt;String&gt; issueToken(user, path, name, kind) async {
+    var request = http.MultipartRequest(
+      'POST',
+      Uri.http(endpoint, '/v1/asset/$user/issue'),
+    )
+      ..fields['name'] = name
+      ..fields['kind'] = kind
+      ..files.add(await http.MultipartFile.fromPath(
+        'file',
+        path,
+      ));
+    var response = await request.send();
+    String body = await response.stream.bytesToString();
+    print(body);
+    String uri = jsonDecode(body)['uri'];
+
+    return 'http://$endpoint$uri';
+  }
+
+  static Future&lt;List&gt; listTokens(user) async {
+    final response =
+        await http.get(Uri.http(endpoint, &quot;/v1/asset/$user/token&quot;));
+
+    List&lt;NftToken&gt; ret = [];
+    if (response.statusCode == 200) {
+      List&lt;dynamic&gt; history = jsonDecode(response.body);
+      print(history);
+
+      for (final el in history) {
+        final tokenUri = el['tokenUri'];
+        print(tokenUri);
+        final resp = await http.get(Uri.parse(tokenUri));
+
+        ret.add(NftToken.fromResponseBody(jsonDecode(resp.body)));
+      }
+      history.forEach((element) {});
+    }
+
+    return ret;
+  }
+
+  static Future&lt;String&gt; sendNftToken(user, tokenId, to) async {
+    final response = await http.post(
+      Uri.http(endpoint, '/v1/asset/$user/token/$tokenId'),
+      headers: &lt;String, String&gt;{
+        'Content-Type': 'application/json; charset=UTF-8',
+      },
+      body: jsonEncode(&lt;String, dynamic&gt;{
+        &quot;to&quot;: to,
+      }),
+    );
+
+    print(response.statusCode);
+    if (response.statusCode == 200) {
+      Map&lt;String, dynamic&gt; result = jsonDecode(response.body);
+
+      return result['transactionHash'];
+    }
+
+    throw Exception('failed to send NFT token');
+  }
+
+  static Future&lt;SafeMoney&gt; createSafeMoney(
+      userId, safeName, tokenId, invitedUsers, image) async {
+    final response = await http.post(
+      Uri.http(endpoint, '/v1/safe'),
+      headers: &lt;String, String&gt;{
+        'Content-Type': 'application/json; charset=UTF-8',
+      },
+      body: jsonEncode(&lt;String, dynamic&gt;{
+        'creator': userId,
+        'name': safeName,
+        'warrant': tokenId,
+        'invitees': invitedUsers,
+        'image': image,
+      }),
+    );
+
+    if (response.statusCode == 200) {
+      return SafeMoney.fromJson(jsonDecode(response.body));
+    }
+
+    throw Exception('failed to create safe money');
+  }
+
+  static Future&lt;List&gt; listSafeMoney(userId) async {
+    final response = await http.get(Uri.http(endpoint, '/v1/safe/$userId'));
+    print(response.body);
+    List&lt;SafeMoney&gt; ret = [];
+    if (response.statusCode == 200) {
+      for (final map in jsonDecode(response.body)) {
+        ret.add(SafeMoney.fromJson(map));
+      }
+    }
+    return ret;
+  }
+
+  static Future approveTransaction(
+      userId, transactionId, safeAddress, tokenId) async {
+    final response = await http.post(
+      Uri.http(endpoint, '/v1/safe/$safeAddress/$tokenId/sign'),
+      headers: &lt;String, String&gt;{
+        'Content-Type': 'application/json; charset=UTF-8',
+      },
+      body: jsonEncode(&lt;String, dynamic&gt;{
+        'transactionId': transactionId,
+        'userId': userId,
+      }),
+    );
+
+    print(response.body);
+  }
+
+  static Future&lt;String&gt; sendSafeNftToken(safe, user, tokenId, to) async {
+    final response = await http.post(
+      Uri.http(endpoint, '/v1/safe/$safe/token/$tokenId'),
+      headers: &lt;String, String&gt;{
+        'Content-Type': 'application/json; charset=UTF-8',
+      },
+      body: jsonEncode(&lt;String, dynamic&gt;{
+        &quot;to&quot;: to,
+        &quot;from&quot;: user,
+      }),
+    );
+
+    print(response.statusCode);
+    if (response.statusCode == 200) {
+      Map&lt;String, dynamic&gt; result = jsonDecode(response.body);
+
+      return result['transactionId'];
+    }
+
+    throw Exception('failed to send NFT token');
+  }
+}
+
+</code></pre><h3 id="모델-구현">모델 구현</h3>
+<ul>
+<li><code>lib/models/klay_transfer.dart</code></li>
+</ul>
+<!--listend-->
+<pre><code class="language-flutter" data-lang="flutter">import 'package:kastutorial/interfaces/sqlite_model.dart';
+import 'package:kastutorial/store/sqlite.dart';
+
+class KlayTransfer extends Sqlite&lt;KlayTransfer&gt; implements SqliteModel {
+  @override
+  int id;
+
+  final int timestamp;
+  final String eventType;
+  final String target;
+  final String value;
+
+  KlayTransfer({this.eventType, this.target, this.value, this.timestamp})
+      : super('klay_transfer') {
+    super.doc = this;
+  }
+
+  static KlayTransfer fromJson(Map&lt;String, dynamic&gt; json) {
+    return KlayTransfer(
+      eventType: json['eventType'],
+      target: json['target'],
+      value: json['value'],
+      timestamp: json['timestamp'],
+    );
+  }
+
+  @override
+  Map&lt;String, dynamic&gt; toMap() {
+    Map&lt;String, dynamic&gt; ret = {
+      'timestamp': timestamp,
+      'eventType': eventType,
+      'target': target,
+      'value': value,
+    };
+    if (id != null) {
+      ret['id'] = id;
+    }
+
+    return ret;
+  }
+
+  @override
+  dynamic fromMap(Map&lt;String, dynamic&gt; map) {
+    // TODO: implement fromMap
+    KlayTransfer ret = fromJson(map);
+    ret.id = map['id'];
+
+    return ret;
+  }
+}
+
+</code></pre>
+</section>
+
+
+    <footer class="article-footer">
+    
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    <section class="article-time">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <span class="article-time--modified">
+             Sep 02, 2021 08:07 KST
+        </span>
+    </section></footer>
+
+    
+</article>
+
+  
+
+  <footer class="footer text-muted">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 order-last order-lg-first">
+        <ul class="list-inline">
+          <li class="list-inline-item">Written by <a href="https://github.com/hackartists/">Hackartists</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-8 order-first order-lg-last text-lg-right">
+        <ul class="list-inline">
+          </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
+            >
+
+      </div>
+    </div>
+    
+    
+    <footer class="footer text-muted">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 order-last order-lg-first">
+        <ul class="list-inline">
+          <li class="list-inline-item">Written by <a href="https://github.com/hackartists/">Hackartists</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-8 order-first order-lg-last text-lg-right">
+        <ul class="list-inline">
+          </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+    
+    <script src="https://www.hackartist.io/main.3ad44c88a44a6b3565c5e8c0ce56d40eda8d8e6ad8851feaec0d7b6086558f92673baefa3da37eda4122378c781e70c502dd44de30d6952ded1434465895eebf.js" integrity="sha512-OtRMiKRKazVlxejAzlbUDtqNjmrYhR/q7A17YIZVj5JnO676PaN&#43;2kEiN4x4HnDFAt1E3jDWlS3tFDRGWJXuvw==" crossorigin="anonymous" defer></script>
+  <script src="https://www.hackartist.io/index.min.2c870c8cafebe1d4985c84650f6732b7dbeb97092c016f634599b6fe012b5e70abbc080b1ea4fd7f8602b9ff09b370f5f32c095b3505bb04422fc62409804123.js" integrity="sha512-LIcMjK/r4dSYXIRlD2cyt9vrlwksAW9jRZm2/gErXnCrvAgLHqT9f4YCuf8Js3D18ywJWzUFuwRCL8YkCYBBIw==" crossorigin="anonymous" defer></script>
+
+  </body>
+</html>

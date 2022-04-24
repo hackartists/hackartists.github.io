@@ -1,0 +1,497 @@
+<!doctype html>
+<html lang="ko-KR">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-site-verification" content="tNCBNDAHu7WCNK0UMGcP3wGpc2QbFHHjdkVZWtaC1RA" />
+
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='Creation of Docker Image'>
+<meta property='og:description' content='This page explains how to manage docker images.'>
+<meta property='og:url' content='https://www.hackartist.io/infra/docker/manage-image/'>
+<meta property='og:site_name' content=''>
+<meta property='og:type' content='article'><meta property='article:section' content='Infra' /><meta property='article:tag' content='infra' /><meta property='article:tag' content='docker' /><meta property='article:tag' content='image' /><meta property='article:published_time' content='2021-02-11T00:00:00&#43;09:00'/><meta property='article:modified_time' content='2022-04-14T19:12:43&#43;09:00'/>
+<meta name="twitter:title" content="Creation of Docker Image">
+<meta name="twitter:description" content="This page explains how to manage docker images."><link rel="preload" as="font" href="https://www.hackartist.io/fonts/vendor/jost/jost-v4-latin-regular.woff2" type="font/woff2" crossorigin>
+<link rel="preload" as="font" href="https://www.hackartist.io/fonts/vendor/jost/jost-v4-latin-700.woff2" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="https://www.hackartist.io/main.513b91602f78c359f8752f7fa109ef93113e4260c94cbd02252baca81058a5091ebc8580b506aff8de6f7c64daf29ec9317fd0cb7e305e5fce8935bd40323445.css" integrity="sha512-UTuRYC94w1n4dS9/oQnvkxE&#43;QmDJTL0CJSusqBBYpQkevIWAtQav&#43;N5vfGTa8p7JMX/Qy34wXl/OiTW9QDI0RQ==" crossorigin="anonymous">
+<noscript><style>img.lazyload { display: none; }</style></noscript>
+  <meta name="robots" content="index, follow">
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <title>Creation of Docker Image - Hackartist&#39;s Tech Site</title>
+<meta name="description" content="This page explains how to manage docker images.">
+<link rel="canonical" href="https://www.hackartist.io/infra/docker/manage-image/">
+<meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://www.hackartist.io/infra/docker/manage-image//Volumes/data/devel/github.com/hackartists/notes/images/docker-life-cycle.png">
+<meta name="twitter:title" content="Creation of Docker Image">
+<meta name="twitter:description" content="This page explains how to manage docker images.">
+
+<meta name="twitter:site" content="@">
+<meta name="twitter:creator" content="@">
+
+<meta property="og:title" content="Creation of Docker Image">
+<meta property="og:description" content="This page explains how to manage docker images.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.hackartist.io/infra/docker/manage-image/">
+<meta property="og:image" content="https://www.hackartist.io/infra/docker/manage-image//Volumes/data/devel/github.com/hackartists/notes/images/docker-life-cycle.png">
+  <meta property="article:published_time" content="2021-02-11T00:00:00+09:00">
+  <meta property="article:modified_time" content="2022-04-14T19:12:43+09:00">
+  <meta property="og:site_name" content="Hackartist&#39;s Tech Site">
+
+<meta property="article:publisher" content="https://www.facebook.com/">
+<meta property="article:author" content="https://www.facebook.com/">
+<meta property="og:locale" content="en_US">
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position":  1 ,
+        "name": "Home",
+        "item": "https:\/\/www.hackartist.io"
+    },{
+        "@type": "ListItem",
+        "position":  3 ,
+        "name": "Infra",
+        "item": "https:\/\/www.hackartist.io\/infra\/"
+    },{
+        "@type": "ListItem",
+        "position":  4 ,
+        "name": "Docker",
+        "item": "https:\/\/www.hackartist.io\/infra\/docker\/"
+    },{
+        "@type": "ListItem",
+        "position":  5 ,
+        "name": "Manage Image",
+        "item": "https:\/\/www.hackartist.io\/infra\/docker\/manage-image\/"
+    }]
+}
+</script>
+
+  <meta name="theme-color" content="#fff">
+<link rel="apple-touch-icon" sizes="180x180" href="https://www.hackartist.io/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://www.hackartist.io/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://www.hackartist.io/favicon-16x16.png">
+<link rel="manifest" href="https://www.hackartist.io/site.webmanifest">
+  
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3L5TX41ECT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-3L5TX41ECT');
+</script>
+<script data-ad-client="ca-pub-5079369906312917" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+</head>
+
+  <body class="infra single">
+    <div class="header-bar fixed-top"></div>
+<header class="navbar fixed-top navbar-expand-md navbar-light">
+  <div class="container">
+    <input class="menu-btn order-0" type="checkbox" id="menu-btn">
+    <label class="menu-icon d-md-none" for="menu-btn"><span class="navicon"></span></label>
+    <a class="navbar-brand order-1 order-md-0 mr-auto" href="https://www.hackartist.io/">Hackartist&#39;s Tech Site</a>
+    <button id="mode" class="btn btn-link order-2 order-md-4" type="button" aria-label="Toggle mode">
+      <span class="toggle-dark"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></span>
+      <span class="toggle-light"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sun"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg></span>
+    </button>
+    <ul class="navbar-nav social-nav order-3 order-md-5">
+      <li class="nav-item">
+          <a class="nav-link" href="https://github.com/hackartists/hackartists.github.io"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg><span class="ml-2 sr-only">GitHub</span></a>
+        </li>
+      </ul>
+    <div class="collapse navbar-collapse order-4 order-md-1">
+      <ul class="navbar-nav main-nav mr-auto order-5 order-md-2"><li class="nav-item active">
+            <a class="nav-link" href="https://www.hackartist.io/infra/introduction">Infrastructure</a>
+          </li>
+        <li class="nav-item">
+            <a class="nav-link" href="https://www.hackartist.io/design/introduction">Design</a>
+          </li>
+        <li class="nav-item">
+            <a class="nav-link" href="https://www.hackartist.io/devel/introduction">Development</a>
+          </li>
+        <li class="nav-item">
+            <a class="nav-link" href="https://www.hackartist.io/ops/introduction">Testing&amp;Operation</a>
+          </li>
+        <li class="nav-item">
+            <a class="nav-link" href="https://www.hackartist.io/emacs/introduction">Emacs</a>
+          </li>
+        <li class="nav-item">
+            <a class="nav-link" href="https://www.hackartist.io/blog/">Blog</a>
+          </li>
+        </ul>
+      <div class="break order-6 d-md-none"></div>
+      <form class="navbar-form flex-grow-1 order-7 order-md-3">
+        <input id="userinput" class="form-control is-search" type="search" placeholder="Search docs..." aria-label="Search docs..." autocomplete="off">
+        <div id="suggestions" class="shadow bg-white rounded"></div>
+      </form>
+    </div>
+  </div>
+</header>
+
+    <div class="wrap container" role="document">
+      <div class="content">
+        
+	<div class="row flex-xl-nowrap">
+		<div class="col-lg-5 col-xl-4 docs-sidebar">
+			<nav class="docs-links" aria-label="Main navigation">
+				<h3>Infrastructure</h3>
+<h3>Terminology</h3>
+<ul class="list-unstyled">
+  <li><a class="docs-link" href="https://www.hackartist.io/infra/terminology/docker/">Docker</a></li>
+  </ul>
+<h3>Docker</h3>
+<ul class="list-unstyled">
+  <li><a class="docs-link" href="https://www.hackartist.io/infra/docker/introduction/">Introduction</a></li>
+  <li><a class="docs-link" href="https://www.hackartist.io/infra/docker/docker-basic/">Container management</a></li>
+  <li><a class="docs-link" href="https://www.hackartist.io/infra/docker/manage-db/">MongoDB Container</a></li>
+  <li><a class="docs-link active" href="https://www.hackartist.io/infra/docker/manage-image/">Creation of Docker Image</a></li>
+  <li><a class="docs-link" href="https://www.hackartist.io/infra/docker/docker-build-advanced/">Advanced docker build technique</a></li>
+  <li><a class="docs-link" href="https://www.hackartist.io/infra/docker/docker-compose/">Management of multiple containers</a></li>
+  <li><a class="docs-link" href="https://www.hackartist.io/infra/docker/docker-vpn/">Implementation of Docker VPN</a></li>
+  <li><a class="docs-link" href="https://www.hackartist.io/infra/docker/docker-dns/">Implementation of Docker DNS</a></li>
+  </ul>
+
+			</nav>
+		</div>
+		<nav class="docs-toc d-none d-xl-block col-xl-3" aria-label="Secondary navigation">
+			<div class="page-links">
+    <h3>On this page</h3>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#image-management">Image management</a>
+      <ul>
+        <li><a href="#what-is-docker-image">What is docker image?</a></li>
+        <li><a href="#listing-images">Listing images</a></li>
+        <li><a href="#pruning-docker-images">Pruning docker images</a></li>
+      </ul>
+    </li>
+    <li><a href="#modification-of-docker-image"><span class="org-todo done DONE">DONE</span> Modification of docker image</a>
+      <ul>
+        <li><a href="#creating-your-own-docker-image">Creating your own docker image</a></li>
+      </ul>
+    </li>
+    <li><a href="#building-docker-image"><span class="org-todo done DONE">DONE</span> Building docker image</a>
+      <ul>
+        <li><a href="#간단한-예제-코드-개발">간단한 예제 코드 개발</a></li>
+        <li><a href="#dockerfile-활용">Dockerfile 활용</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+
+		</nav>
+		<main class="docs-content col-lg-11 col-xl-9">
+		<h1>Creation of Docker Image</h1>
+			<p class="lead">manage docker images</p>
+			<h2 id="image-management">Image management<a href="#image-management" class="anchor" aria-hidden="true">#</a> </h2>
+<h3 id="what-is-docker-image">What is docker image?<a href="#what-is-docker-image" class="anchor" aria-hidden="true">#</a> </h3>
+<ul>
+<li>Template for containers</li>
+</ul>
+<h3 id="listing-images">Listing images<a href="#listing-images" class="anchor" aria-hidden="true">#</a> </h3>
+<ul>
+<li>Use <code>docker images</code> command
+<ul>
+<li><code>Repository</code> means a storage for a docker image.
+<ul>
+<li>Usually, we call the string after <code>/</code> of repository to the name of an image.</li>
+</ul>
+</li>
+<li>An image means a single template formed by hash.</li>
+</ul>
+</li>
+</ul>
+<!--listend-->
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">docker images
+</code></pre></div><table>
+<thead>
+<tr>
+<th>REPOSITORY</th>
+<th>TAG</th>
+<th>IMAGE</th>
+<th>ID</th>
+<th>CREATED</th>
+<th>SIZE</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ubuntu</td>
+<td>latest</td>
+<td>adafef2e596e</td>
+<td>7</td>
+<td>months  ago</td>
+<td>73.9MB</td>
+</tr>
+<tr>
+<td>ubuntu</td>
+<td>18.04</td>
+<td>d27b9ffc5667</td>
+<td>7</td>
+<td>months  ago</td>
+<td>64.2MB</td>
+</tr>
+<tr>
+<td>mongo</td>
+<td>4.2.3</td>
+<td>bcef5fd2979d</td>
+<td>11</td>
+<td>months  ago</td>
+<td>386MB</td>
+</tr>
+</tbody>
+</table>
+<h3 id="pruning-docker-images">Pruning docker images<a href="#pruning-docker-images" class="anchor" aria-hidden="true">#</a> </h3>
+<ul>
+<li>Sometime, we want to remove all unused images due to lack of storage.
+<ul>
+<li><code>prune</code> deletes all images not to be containerized.</li>
+</ul>
+</li>
+</ul>
+<!--listend-->
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">docker image prune -f
+</code></pre></div><ul>
+<li>You can remove all volumes not to be mapped to any container.
+<ul>
+<li>Remove all volumes not to be mounted</li>
+</ul>
+</li>
+</ul>
+<!--listend-->
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">docker volume prune -f
+</code></pre></div><ul>
+<li>Similarly, you can prune unused containers by using <code>container</code>.</li>
+</ul>
+<h2 id="modification-of-docker-image"><span class="org-todo done DONE">DONE</span> Modification of docker image<a href="#modification-of-docker-image" class="anchor" aria-hidden="true">#</a> </h2>
+<ul>
+<li>Life cycle of docker image
+<ol>
+<li>Creating docker image.</li>
+<li>Executing some changes in the container.</li>
+<li>Committing the changes of container to the image.</li>
+<li>Pushing the image to the repository.</li>
+</ol>
+</li>
+</ul>
+<figure>
+    <img src="/ox-hugo/docker-life-cycle.png"/> 
+</figure>
+
+<h3 id="creating-your-own-docker-image">Creating your own docker image<a href="#creating-your-own-docker-image" class="anchor" aria-hidden="true">#</a> </h3>
+<h4 id="creating-base-container">Creating base container<a href="#creating-base-container" class="anchor" aria-hidden="true">#</a> </h4>
+<ul>
+<li>Use <code>archlinux</code> image as a base container.</li>
+</ul>
+<!--listend-->
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">docker run -it --name archlinux archlinux
+</code></pre></div><h4 id="changing-some-contents-in-the-container">Changing some contents in the container<a href="#changing-some-contents-in-the-container" class="anchor" aria-hidden="true">#</a> </h4>
+<ul>
+<li>Creating a new file.</li>
+</ul>
+<!--listend-->
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">echo</span> <span class="s2">&#34;new file&#34;</span> &gt;&gt; /root/readme.md
+<span class="nb">exit</span>
+</code></pre></div><h4 id="committing-and-push-the-image">Committing and push the image<a href="#committing-and-push-the-image" class="anchor" aria-hidden="true">#</a> </h4>
+<ul>
+<li>You can use <code>commit</code> sub-command to store your change in a image.
+<ul>
+<li><code>docker commit -m &quot;{{message}}&quot; {{container-name}} {{image-repository}}:{{tag-name}}</code></li>
+</ul>
+</li>
+</ul>
+<!--listend-->
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">docker commit -m <span class="s2">&#34;my own image&#34;</span> archlinux hackartist/my-own-image:latest
+</code></pre></div><ul>
+<li><code>images</code> sub-command help us to list images.</li>
+</ul>
+<!--listend-->
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">docker images
+</code></pre></div><table>
+<thead>
+<tr>
+<th>REPOSITORY</th>
+<th>TAG</th>
+<th>IMAGE</th>
+<th>ID</th>
+<th>CREATED</th>
+<th>SIZE</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>hackartist/my-own-image</td>
+<td>latest</td>
+<td>3b7256abb727</td>
+<td>8</td>
+<td>minutes  ago</td>
+<td>406MB</td>
+</tr>
+<tr>
+<td>hackartist/docker-dns</td>
+<td>latest</td>
+<td>a006dfefbbbf</td>
+<td>7</td>
+<td>months   ago</td>
+<td>422MB</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><code>run</code> 하위명령어를 통해서 컨테이너 생성 후 확인</li>
+</ul>
+<!--listend-->
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">docker run -it --name myarch hackartist/my-own-image:latest
+cat /root/readme.md
+</code></pre></div><h2 id="building-docker-image"><span class="org-todo done DONE">DONE</span> Building docker image<a href="#building-docker-image" class="anchor" aria-hidden="true">#</a> </h2>
+<ul>
+<li>Similar with <a class="link" href="#committing-and-push-the-image" >Committing and push the image</a>, you can create and build an image.
+<ul>
+<li>Refer to <a class="link" href="https://github.com/hackartists/dockerize"  target="_blank" rel="noopener"
+    >Dockerize github</a>.
+<ol>
+<li>Write your code</li>
+<li>Write <code>Dockerfile</code> script</li>
+<li>Execute <code>docker build</code> to build a docker image</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="간단한-예제-코드-개발">간단한 예제 코드 개발<a href="#간단한-예제-코드-개발" class="anchor" aria-hidden="true">#</a> </h3>
+<ul>
+<li><code>go</code> 개발 언어로 헬로우 월드를 개발
+<ul>
+<li>상세 내용은 개발 섹션을 참고</li>
+<li>파일 이름은 <code>main.go</code> 로 지정</li>
+</ul>
+</li>
+</ul>
+<!--listend-->
+<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="kn">package</span> <span class="nx">main</span>
+
+<span class="kn">import</span> <span class="s">&#34;fmt&#34;</span>
+
+<span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;hello world&#34;</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div><h4 id="예제-코드-실행">예제 코드 실행<a href="#예제-코드-실행" class="anchor" aria-hidden="true">#</a> </h4>
+<ul>
+<li><code>go mod init {{package name}}</code> 은 의존성 관리 및 <code>GOPATH</code> 가 아닌 곳에서 빌드를 위한 프로젝트 관리</li>
+<li><code>go build</code> 를 통해서 해당 프로그램을 빌드
+<ul>
+<li><code>-o</code> 옵션으로 실행 파일 이름 지정</li>
+</ul>
+</li>
+</ul>
+<!--listend-->
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">go mod init github.com/hackartists/dockerize
+go build -o app
+./app
+</code></pre></div><h3 id="dockerfile-활용">Dockerfile 활용<a href="#dockerfile-활용" class="anchor" aria-hidden="true">#</a> </h3>
+<ul>
+<li><code>docker build</code> 를 통해서 이미지 생성
+<ul>
+<li><code>-f</code> 옵션으로 <code>Dockerfile</code> 이름 설정
+<ul>
+<li><code>./Dockerfile</code> 은 기본 설정이라서 생략 가능</li>
+</ul>
+</li>
+<li><code>-t</code> 옵션으로 레포지토리 및 태그 이름을 지정</li>
+<li><code>.</code> 은 도커 컨텍스트 디렉토리를 의미
+<ul>
+<li>지정된 디렉토리 이하로 모든 파일을 도커 빌드를 위해서 로딩함.</li>
+<li><code>.dockerignore</code> 를 통해서 불필요한 디렉토리를 제외할 수 있음.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!--listend-->
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">docker build -f Dockerfile -t hackartist/go-hello-world .
+</code></pre></div><h4 id="dockerfile-스크립트">Dockerfile 스크립트<a href="#dockerfile-스크립트" class="anchor" aria-hidden="true">#</a> </h4>
+<ul>
+<li>빌드를 위한 최초 이미지 선택
+<ul>
+<li>위의 예제는 <code>go</code> 언어를 사용하기 때문에 <code>golang:latest</code> 이미지를 활용</li>
+</ul>
+</li>
+<li>빌드 커맨드 수행
+<ul>
+<li><code>go build -o app</code> 으로 빌드 가능</li>
+</ul>
+</li>
+</ul>
+<!--listend-->
+<div class="highlight"><pre class="chroma"><code class="language-dockerfile" data-lang="dockerfile"><span class="k">FROM</span><span class="s"> golang:latest</span><span class="err">
+</span><span class="err">
+</span><span class="err"></span><span class="k">ADD</span> . /workdir<span class="err">
+</span><span class="err">
+</span><span class="err"></span><span class="k">WORKDIR</span><span class="s"> /workdir</span><span class="err">
+</span><span class="err"></span><span class="k">RUN</span> go build -o app<span class="err">
+</span><span class="err">
+</span><span class="err"></span><span class="k">CMD</span> <span class="p">[</span><span class="s2">&#34;/workdir/app&#34;</span><span class="p">]</span><span class="err">
+</span></code></pre></div><h4 id="도커-업로드--push--하기">도커 업로드(push) 하기<a href="#도커-업로드--push--하기" class="anchor" aria-hidden="true">#</a> </h4>
+<ul>
+<li>생성한 도커 이미지를 해당 레포지토리에 업로드
+<ul>
+<li>도메인 이름이 없는 경우 자동으로 <code>docker.io</code> 가 추가됨.</li>
+</ul>
+</li>
+</ul>
+<!--listend-->
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">docker push hackartist/go-hello-world
+</code></pre></div>
+			<div class="docs-navigation d-flex justify-content-between">
+	
+	<a href="https://www.hackartist.io/infra/docker/manage-db/">
+			<div class="card my-1">
+				<div class="card-body py-2">
+					&larr; MongoDB Container
+				</div>
+			</div>
+		</a>
+	<a class="ml-auto" href="https://www.hackartist.io/infra/docker/docker-build-advanced/">
+			<div class="card my-1">
+				<div class="card-body py-2">
+					Advanced docker build technique &rarr;
+				</div>
+			</div>
+		</a>
+	</div>
+
+		</main>
+	</div>
+
+      </div>
+    </div>
+    
+    
+    <footer class="footer text-muted">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 order-last order-lg-first">
+        <ul class="list-inline">
+          <li class="list-inline-item">Written by <a href="https://github.com/hackartists/">Hackartists</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-8 order-first order-lg-last text-lg-right">
+        <ul class="list-inline">
+          </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+    
+    <script src="https://www.hackartist.io/main.3ad44c88a44a6b3565c5e8c0ce56d40eda8d8e6ad8851feaec0d7b6086558f92673baefa3da37eda4122378c781e70c502dd44de30d6952ded1434465895eebf.js" integrity="sha512-OtRMiKRKazVlxejAzlbUDtqNjmrYhR/q7A17YIZVj5JnO676PaN&#43;2kEiN4x4HnDFAt1E3jDWlS3tFDRGWJXuvw==" crossorigin="anonymous" defer></script>
+  <script src="https://www.hackartist.io/index.min.2c870c8cafebe1d4985c84650f6732b7dbeb97092c016f634599b6fe012b5e70abbc080b1ea4fd7f8602b9ff09b370f5f32c095b3505bb04422fc62409804123.js" integrity="sha512-LIcMjK/r4dSYXIRlD2cyt9vrlwksAW9jRZm2/gErXnCrvAgLHqT9f4YCuf8Js3D18ywJWzUFuwRCL8YkCYBBIw==" crossorigin="anonymous" defer></script>
+
+  </body>
+</html>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>flutter on </title>
+    <link>https://www.hackartist.io/categories/flutter/</link>
+    <description>Recent content in flutter on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-KR</language>
+    <lastBuildDate>Wed, 01 Sep 2021 17:32:54 +0900</lastBuildDate><atom:link href="https://www.hackartist.io/categories/flutter/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mobile Development with Flutter</title>
+      <link>https://www.hackartist.io/posts/flutter/</link>
+      <pubDate>Wed, 01 Sep 2021 17:32:54 +0900</pubDate>
+      
+      <guid>https://www.hackartist.io/posts/flutter/</guid>
+      <description>Introduction  구글에서 개발한 모바일, 웹, 데스크탑 등을 위한 UI 개발 프레임워크  싱글 코드 기반으로 모든 플랫폼의 UI 개발을 지향   Dart 프로그래밍 언어를 사용하여 개발함    Setup an Environment Flutter CLI 설치  flutter 컴파일을 위한 프로그램 설치   yay -S flutter brew install flutter Android 환경 설치  Downloading AdoptOpenJDK version 8   brew install adopt-openjdk yay -S jdk-openjdk  Downloading Android SDK   brew install android-sdk yay -S android-sdk android-sdk-platform-tools  Installing Android SDK into the PC   unzip commandlinetools-linux-6200805_latest.</description>
+    </item>
+    
+  </channel>
+</rss>

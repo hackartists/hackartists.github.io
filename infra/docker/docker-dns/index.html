@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="ko-KR">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-site-verification" content="tNCBNDAHu7WCNK0UMGcP3wGpc2QbFHHjdkVZWtaC1RA" />
+
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='Implementation of Docker DNS'>
+<meta property='og:description' content='This page explains how to connect to containers with thier name.'>
+<meta property='og:url' content='https://www.hackartist.io/infra/docker/docker-dns/'>
+<meta property='og:site_name' content=''>
+<meta property='og:type' content='article'><meta property='article:section' content='Infra' /><meta property='article:tag' content='infra' /><meta property='article:tag' content='docker' /><meta property='article:tag' content='dns' /><meta property='article:published_time' content='2021-02-27T20:30:00&#43;09:00'/><meta property='article:modified_time' content='2021-02-27T22:04:39&#43;09:00'/>
+<meta name="twitter:title" content="Implementation of Docker DNS">
+<meta name="twitter:description" content="This page explains how to connect to containers with thier name."><link rel="preload" as="font" href="https://www.hackartist.io/fonts/vendor/jost/jost-v4-latin-regular.woff2" type="font/woff2" crossorigin>
+<link rel="preload" as="font" href="https://www.hackartist.io/fonts/vendor/jost/jost-v4-latin-700.woff2" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="https://www.hackartist.io/main.513b91602f78c359f8752f7fa109ef93113e4260c94cbd02252baca81058a5091ebc8580b506aff8de6f7c64daf29ec9317fd0cb7e305e5fce8935bd40323445.css" integrity="sha512-UTuRYC94w1n4dS9/oQnvkxE&#43;QmDJTL0CJSusqBBYpQkevIWAtQav&#43;N5vfGTa8p7JMX/Qy34wXl/OiTW9QDI0RQ==" crossorigin="anonymous">
+<noscript><style>img.lazyload { display: none; }</style></noscript>
+  <meta name="robots" content="index, follow">
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <title>Implementation of Docker DNS - Hackartist&#39;s Tech Site</title>
+<meta name="description" content="This page explains how to connect to containers with thier name.">
+<link rel="canonical" href="https://www.hackartist.io/infra/docker/docker-dns/">
+<meta name="twitter:card" content="summary_large_image">
+      <meta name="twitter:image" content="https://www.hackartist.io/doks.png">
+    <meta name="twitter:title" content="Implementation of Docker DNS">
+<meta name="twitter:description" content="This page explains how to connect to containers with thier name.">
+
+<meta name="twitter:site" content="@">
+<meta name="twitter:creator" content="@">
+
+<meta property="og:title" content="Implementation of Docker DNS">
+<meta property="og:description" content="This page explains how to connect to containers with thier name.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.hackartist.io/infra/docker/docker-dns/">
+
+  <meta property="og:image" content="https://www.hackartist.io/doks.png"/>
+    <meta property="article:published_time" content="2021-02-27T20:30:00+09:00">
+  <meta property="article:modified_time" content="2021-02-27T22:04:39+09:00">
+  <meta property="og:site_name" content="Hackartist&#39;s Tech Site">
+
+<meta property="article:publisher" content="https://www.facebook.com/">
+<meta property="article:author" content="https://www.facebook.com/">
+<meta property="og:locale" content="en_US">
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position":  1 ,
+        "name": "Home",
+        "item": "https:\/\/www.hackartist.io"
+    },{
+        "@type": "ListItem",
+        "position":  3 ,
+        "name": "Infra",
+        "item": "https:\/\/www.hackartist.io\/infra\/"
+    },{
+        "@type": "ListItem",
+        "position":  4 ,
+        "name": "Docker",
+        "item": "https:\/\/www.hackartist.io\/infra\/docker\/"
+    },{
+        "@type": "ListItem",
+        "position":  5 ,
+        "name": "Docker Dns",
+        "item": "https:\/\/www.hackartist.io\/infra\/docker\/docker-dns\/"
+    }]
+}
+</script>
+
+  <meta name="theme-color" content="#fff">
+<link rel="apple-touch-icon" sizes="180x180" href="https://www.hackartist.io/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://www.hackartist.io/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://www.hackartist.io/favicon-16x16.png">
+<link rel="manifest" href="https://www.hackartist.io/site.webmanifest">
+  
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3L5TX41ECT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-3L5TX41ECT');
+</script>
+<script data-ad-client="ca-pub-5079369906312917" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+</head>
+
+  <body class="infra single">
+    <div class="header-bar fixed-top"></div>
+<header class="navbar fixed-top navbar-expand-md navbar-light">
+  <div class="container">
+    <input class="menu-btn order-0" type="checkbox" id="menu-btn">
+    <label class="menu-icon d-md-none" for="menu-btn"><span class="navicon"></span></label>
+    <a class="navbar-brand order-1 order-md-0 mr-auto" href="https://www.hackartist.io/">Hackartist&#39;s Tech Site</a>
+    <button id="mode" class="btn btn-link order-2 order-md-4" type="button" aria-label="Toggle mode">
+      <span class="toggle-dark"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></span>
+      <span class="toggle-light"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sun"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg></span>
+    </button>
+    <ul class="navbar-nav social-nav order-3 order-md-5">
+      <li class="nav-item">
+          <a class="nav-link" href="https://github.com/hackartists/hackartists.github.io"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg><span class="ml-2 sr-only">GitHub</span></a>
+        </li>
+      </ul>
+    <div class="collapse navbar-collapse order-4 order-md-1">
+      <ul class="navbar-nav main-nav mr-auto order-5 order-md-2"><li class="nav-item active">
+            <a class="nav-link" href="https://www.hackartist.io/infra/introduction">Infrastructure</a>
+          </li>
+        <li class="nav-item">
+            <a class="nav-link" href="https://www.hackartist.io/design/introduction">Design</a>
+          </li>
+        <li class="nav-item">
+            <a class="nav-link" href="https://www.hackartist.io/devel/introduction">Development</a>
+          </li>
+        <li class="nav-item">
+            <a class="nav-link" href="https://www.hackartist.io/ops/introduction">Testing&amp;Operation</a>
+          </li>
+        <li class="nav-item">
+            <a class="nav-link" href="https://www.hackartist.io/emacs/introduction">Emacs</a>
+          </li>
+        <li class="nav-item">
+            <a class="nav-link" href="https://www.hackartist.io/blog/">Blog</a>
+          </li>
+        </ul>
+      <div class="break order-6 d-md-none"></div>
+      <form class="navbar-form flex-grow-1 order-7 order-md-3">
+        <input id="userinput" class="form-control is-search" type="search" placeholder="Search docs..." aria-label="Search docs..." autocomplete="off">
+        <div id="suggestions" class="shadow bg-white rounded"></div>
+      </form>
+    </div>
+  </div>
+</header>
+
+    <div class="wrap container" role="document">
+      <div class="content">
+        
+	<div class="row flex-xl-nowrap">
+		<div class="col-lg-5 col-xl-4 docs-sidebar">
+			<nav class="docs-links" aria-label="Main navigation">
+				<h3>Infrastructure</h3>
+<h3>Terminology</h3>
+<ul class="list-unstyled">
+  <li><a class="docs-link" href="https://www.hackartist.io/infra/terminology/docker/">Docker</a></li>
+  </ul>
+<h3>Docker</h3>
+<ul class="list-unstyled">
+  <li><a class="docs-link" href="https://www.hackartist.io/infra/docker/introduction/">Introduction</a></li>
+  <li><a class="docs-link" href="https://www.hackartist.io/infra/docker/docker-basic/">Container management</a></li>
+  <li><a class="docs-link" href="https://www.hackartist.io/infra/docker/manage-db/">MongoDB Container</a></li>
+  <li><a class="docs-link" href="https://www.hackartist.io/infra/docker/manage-image/">Creation of Docker Image</a></li>
+  <li><a class="docs-link" href="https://www.hackartist.io/infra/docker/docker-build-advanced/">Advanced docker build technique</a></li>
+  <li><a class="docs-link" href="https://www.hackartist.io/infra/docker/docker-compose/">Management of multiple containers</a></li>
+  <li><a class="docs-link" href="https://www.hackartist.io/infra/docker/docker-vpn/">Implementation of Docker VPN</a></li>
+  <li><a class="docs-link active" href="https://www.hackartist.io/infra/docker/docker-dns/">Implementation of Docker DNS</a></li>
+  </ul>
+
+			</nav>
+		</div>
+		<nav class="docs-toc d-none d-xl-block col-xl-3" aria-label="Secondary navigation">
+			<div class="page-links">
+    <h3>On this page</h3>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#purpose">Purpose</a></li>
+    <li><a href="#동작-원리">동작 원리</a></li>
+    <li><a href="#사전-준비-사항">사전 준비 사항</a></li>
+    <li><a href="#도커-dns-구축">도커 DNS 구축</a>
+      <ul>
+        <li><a href="#도커-dns-설정">도커 DNS 설정</a></li>
+        <li><a href="#dns-주소-변경">DNS 주소 변경</a></li>
+        <li><a href="#dns-서버-테스트">DNS 서버 테스트</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+
+		</nav>
+		<main class="docs-content col-lg-11 col-xl-9">
+		<h1>Implementation of Docker DNS</h1>
+			<p class="lead">Access containers by container's name via DNS</p>
+			<h2 id="purpose">Purpose<a href="#purpose" class="anchor" aria-hidden="true">#</a> </h2>
+<ul>
+<li>The containers in a same docker network can communicate each other by their alias, but host machine can&rsquo;t connect to them by alias or name.
+<ul>
+<li>Basically, the containers' IPs are changed whenever they are restarted.
+<ul>
+<li>It makes us hard to manage and connect to the containers.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>In this section, I aim to share how the host machine communicate with the containers by their containers' names.</li>
+</ul>
+<h2 id="동작-원리">동작 원리<a href="#동작-원리" class="anchor" aria-hidden="true">#</a> </h2>
+<ul>
+<li>도커 이름을 풀이해 줄 수 있는 DNS 서버를 개발
+<ul>
+<li>해당 서버의 동작은 아래와 같음.</li>
+</ul>
+</li>
+</ul>
+<figure>
+    <img src="/ox-hugo/docker-dns.png"/> 
+</figure>
+
+<h2 id="사전-준비-사항">사전 준비 사항<a href="#사전-준비-사항" class="anchor" aria-hidden="true">#</a> </h2>
+<ul>
+<li>본 섹션은 호스트 머신과 도커 컨테이너가 직접적인 통신이 가능해야 함.
+<ul>
+<li>Mac OS는 <a class="link" href="/infra/docker/docker-vpn/" >Implementation of Docker VPN</a>을 통해서 직접적인 통신이 가능한 상태여야 함.</li>
+</ul>
+</li>
+</ul>
+<h2 id="도커-dns-구축">도커 DNS 구축<a href="#도커-dns-구축" class="anchor" aria-hidden="true">#</a> </h2>
+<h3 id="도커-dns-설정">도커 DNS 설정<a href="#도커-dns-설정" class="anchor" aria-hidden="true">#</a> </h3>
+<ul>
+<li><code>hackartist/docker-dns</code> 이미지를 사용
+<ul>
+<li>도커 및 쿠버네티스(Kubernetes) DNS 기능 제공
+<ul>
+<li><code>cluster.local.</code> 쿠버네티스 검색도메인 제공</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>docker-compose</code> 에 아래의 컨테이너 정보 추가
+<ul>
+<li><code>/var/run/docker.sock</code> 은 해당 DNS 는 도커 명령어 인터페이스(CLI) 를 통해서 컨테이너 이름을 IP 주소로 변환</li>
+<li>이 과정에서 도커 디먼과 통신을 해야하기 때문에 해당 주소를 마운트 해야함.</li>
+</ul>
+</li>
+</ul>
+<!--listend-->
+<pre><code class="language-docker-compose" data-lang="docker-compose">dns:
+  restart: always
+  container_name: dns
+  image: hackartist/docker-dns:latest
+  volumes:
+    - /var/run/docker.sock:/var/run/docker.sock
+  ports:
+    - 53:53/udp
+  environment:
+    - ENABLE_K8S_DNS_LOOKUP=false
+    - FALLBACK_DNS=8.8.8.8
+</code></pre><h3 id="dns-주소-변경">DNS 주소 변경<a href="#dns-주소-변경" class="anchor" aria-hidden="true">#</a> </h3>
+<ul>
+<li>호스트 머신의 DNS 주소를 <code>127.0.0.1</code> 로 변경
+<ul>
+<li>구축한 도커 DNS 를 기본 DNS로 사용하도록 설정</li>
+<li><code>/etc/resolv.conf</code> 의 내용 또는 네트워크 설정에서 변경할 수 있음.</li>
+</ul>
+</li>
+</ul>
+<!--listend-->
+<div class="highlight"><pre class="chroma"><code class="language-cfg" data-lang="cfg"><span class="na">nameserver 127.0.0.1</span>
+<span class="na">nameserver 10.96.0.10</span>
+<span class="na">nameserver 8.8.8.8</span>
+</code></pre></div><h3 id="dns-서버-테스트">DNS 서버 테스트<a href="#dns-서버-테스트" class="anchor" aria-hidden="true">#</a> </h3>
+<ul>
+<li><code>nslookup</code> 을 통해서 테스트할 수 있음.
+<ul>
+<li>서버가 <code>127.0.0.1</code> 로 나오면 정상 변경이 적용
+<ul>
+<li>변경이 되지 않은 경우에는 네트워크를 비활성화 후에 다시 활성화하여 확인</li>
+</ul>
+</li>
+<li>서버가 <code>127.0.0.1</code> 로 정상적으로 변경되었는데, 검색이 안되면 아래의 내용 확인
+<ul>
+<li><a class="link" href="#%eb%8f%84%ec%bb%a4-dns-%ec%84%a4%ec%a0%95" >도커 DNS 설정</a>에서 이름을 <code>container_name</code> 을 <code>dns</code> 로 했는지 확인</li>
+<li><a class="link" href="#%eb%8f%84%ec%bb%a4-dns-%ec%84%a4%ec%a0%95" >도커 DNS 설정</a>에서 볼륨 마운트를 정상적으로 했는지 확인</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!--listend-->
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">Server:		127.0.0.1
+Address:	127.0.0.1#53
+
+Name:	dns
+Address: 172.51.0.3
+</code></pre></div>
+			<div class="docs-navigation d-flex justify-content-between">
+	
+	<a href="https://www.hackartist.io/infra/docker/docker-vpn/">
+			<div class="card my-1">
+				<div class="card-body py-2">
+					&larr; Implementation of Docker VPN
+				</div>
+			</div>
+		</a>
+	</div>
+
+		</main>
+	</div>
+
+      </div>
+    </div>
+    
+    
+    <footer class="footer text-muted">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 order-last order-lg-first">
+        <ul class="list-inline">
+          <li class="list-inline-item">Written by <a href="https://github.com/hackartists/">Hackartists</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-8 order-first order-lg-last text-lg-right">
+        <ul class="list-inline">
+          </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+    
+    <script src="https://www.hackartist.io/main.3ad44c88a44a6b3565c5e8c0ce56d40eda8d8e6ad8851feaec0d7b6086558f92673baefa3da37eda4122378c781e70c502dd44de30d6952ded1434465895eebf.js" integrity="sha512-OtRMiKRKazVlxejAzlbUDtqNjmrYhR/q7A17YIZVj5JnO676PaN&#43;2kEiN4x4HnDFAt1E3jDWlS3tFDRGWJXuvw==" crossorigin="anonymous" defer></script>
+  <script src="https://www.hackartist.io/index.min.2c870c8cafebe1d4985c84650f6732b7dbeb97092c016f634599b6fe012b5e70abbc080b1ea4fd7f8602b9ff09b370f5f32c095b3505bb04422fc62409804123.js" integrity="sha512-LIcMjK/r4dSYXIRlD2cyt9vrlwksAW9jRZm2/gErXnCrvAgLHqT9f4YCuf8Js3D18ywJWzUFuwRCL8YkCYBBIw==" crossorigin="anonymous" defer></script>
+
+  </body>
+</html>

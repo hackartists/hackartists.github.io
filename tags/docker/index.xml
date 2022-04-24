@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>docker on </title>
+    <link>https://www.hackartist.io/tags/docker/</link>
+    <description>Recent content in docker on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-KR</language>
+    <lastBuildDate>Sat, 27 Feb 2021 20:30:00 +0900</lastBuildDate><atom:link href="https://www.hackartist.io/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Docker</title>
+      <link>https://www.hackartist.io/infra/terminology/docker/</link>
+      <pubDate>Thu, 11 Feb 2021 08:30:00 +0900</pubDate>
+      
+      <guid>https://www.hackartist.io/infra/terminology/docker/</guid>
+      <description>호스트(Host) 도커 디먼을 수행하고 있는 운영체제 및 플랫폼
+이미지(Image) 도커에서 관리되는 애플리케이션 템플릿
+저장소(Repository) 도커 이미지가 저장되는 저장소를 의미하며, 대부분은 domain/user-id/image-name 으로 구성됨
+ domain 이 기술되지 않으면 기본적으로 hub.docker.com 의 registry 도메인을 기본으로 함.  컨테이너(Container) 인스턴스화(구동중인) 된 도커 이미지
+볼륨(Volume) 컨테이너를 위한 저장 공간</description>
+    </item>
+    
+    <item>
+      <title>Introduction</title>
+      <link>https://www.hackartist.io/infra/docker/introduction/</link>
+      <pubDate>Thu, 11 Feb 2021 00:00:00 +0900</pubDate>
+      
+      <guid>https://www.hackartist.io/infra/docker/introduction/</guid>
+      <description>Basic Concept  Docker provides isolated environment depending on each application.  Minimization of affects among applications. Composition of guest OS on Host machine.   Each container utilizes Host&amp;rsquo;s hardware resources such like CPU, RAM and so on.    Docker installation In order to install Docker, refer to https://docs.docker.com/get-docker/.
+ Mac OS Windows Linux  Installing Docker on Arch Linux  You can use yay, pacman to install it.</description>
+    </item>
+    
+    <item>
+      <title>Container management</title>
+      <link>https://www.hackartist.io/infra/docker/docker-basic/</link>
+      <pubDate>Thu, 11 Feb 2021 00:00:00 +0900</pubDate>
+      
+      <guid>https://www.hackartist.io/infra/docker/docker-basic/</guid>
+      <description>Container creation  Create a docker container using CentOS image  -it flag means executing container with attaching their terminal (TTY) and standard input (STDIN) --name flag makes us set a human readable name of the container  You can easily manage the container if it is named. If you don&amp;rsquo;t specify a name of the container, it uses a commit tag as the name and you can use 3 or 4 leading alphanumeric of the name hash to manage it.</description>
+    </item>
+    
+    <item>
+      <title>MongoDB Container</title>
+      <link>https://www.hackartist.io/infra/docker/manage-db/</link>
+      <pubDate>Thu, 11 Feb 2021 00:00:00 +0900</pubDate>
+      
+      <guid>https://www.hackartist.io/infra/docker/manage-db/</guid>
+      <description>Creating MongoDB container  docker commands     Flags Description     -d Running on deamon mode with acquisition of TTY   -p Binding container port to host machine   -v Mounting host path to container path   &amp;ndash;name Container name   &amp;ndash;restart Restart policy (always means automatic start when turning off)    docker run -d -p 27017:27017 \  --restart always \  -v /Users/hackartist/data/docker/mongo/data:/data/db \  --name mongo mongo Management of MongoDB  You can use GUI tools like Robo 3T or MongoDB compass.</description>
+    </item>
+    
+    <item>
+      <title>Creation of Docker Image</title>
+      <link>https://www.hackartist.io/infra/docker/manage-image/</link>
+      <pubDate>Thu, 11 Feb 2021 00:00:00 +0900</pubDate>
+      
+      <guid>https://www.hackartist.io/infra/docker/manage-image/</guid>
+      <description>Image management What is docker image?  Template for containers  Listing images  Use docker images command  Repository means a storage for a docker image.  Usually, we call the string after / of repository to the name of an image.   An image means a single template formed by hash.     docker images    REPOSITORY TAG IMAGE ID CREATED SIZE     ubuntu latest adafef2e596e 7 months ago 73.</description>
+    </item>
+    
+    <item>
+      <title>Advanced docker build technique</title>
+      <link>https://www.hackartist.io/infra/docker/docker-build-advanced/</link>
+      <pubDate>Mon, 15 Feb 2021 08:04:00 +0900</pubDate>
+      
+      <guid>https://www.hackartist.io/infra/docker/docker-build-advanced/</guid>
+      <description>Usage of Dockerignore  Basically, docker build loads all sub directories which cause heavy overhead.  If there are lots of sub directories, build needs a lot of time to load all data. We need to ignore unnecessary directories to reduce loading time.   .dockerignore prevents to load some files and directories.  Basically, we can describe original names of files or directories, but it supports some advanced description technique.</description>
+    </item>
+    
+    <item>
+      <title>Management of multiple containers</title>
+      <link>https://www.hackartist.io/infra/docker/docker-compose/</link>
+      <pubDate>Sun, 21 Feb 2021 11:10:00 +0900</pubDate>
+      
+      <guid>https://www.hackartist.io/infra/docker/docker-compose/</guid>
+      <description>Introduction of docker compose  Docker compose helps us manage multiple containers with a file.  Define a network Define containers For each container, it defines their images, environments, ports and so on.      Docker network configuration Network information  Setting the name of docker network  I set the name to dev-net.   IP range of devnet was set to 192.168.100.0/24.  Namely, all of containers in dev-net network have 192.</description>
+    </item>
+    
+    <item>
+      <title>Implementation of Docker VPN</title>
+      <link>https://www.hackartist.io/infra/docker/docker-vpn/</link>
+      <pubDate>Wed, 24 Feb 2021 08:37:00 +0900</pubDate>
+      
+      <guid>https://www.hackartist.io/infra/docker/docker-vpn/</guid>
+      <description>도커 네트워크 개요 및 제약사항   도커 네트워크는 도커들 간의 사설 네트워크가 구축되고, 호스트 머신과 bridge 인터페이스를 통해서 통신
+ Mac OS의 도커는 가상 머신(virtual machine) 에서 구동되는 것이기 때문에, bridge 가 없음. 따라서, Mac OS 에서는 호스트 머신과 도커 컨테이너들이 직접적으로 통신할 수 없음.  상세한 내용은 도커 네트워크를 참고      Mac OS 에서 호스트 머신이 컨테이너에 접근하기 위해서, -p 옵션을 통해 포트 바인딩이 필요함.</description>
+    </item>
+    
+    <item>
+      <title>Implementation of Docker DNS</title>
+      <link>https://www.hackartist.io/infra/docker/docker-dns/</link>
+      <pubDate>Sat, 27 Feb 2021 20:30:00 +0900</pubDate>
+      
+      <guid>https://www.hackartist.io/infra/docker/docker-dns/</guid>
+      <description>Purpose  The containers in a same docker network can communicate each other by their alias, but host machine can&amp;rsquo;t connect to them by alias or name.  Basically, the containers&#39; IPs are changed whenever they are restarted.  It makes us hard to manage and connect to the containers.     In this section, I aim to share how the host machine communicate with the containers by their containers&#39; names.</description>
+    </item>
+    
+  </channel>
+</rss>

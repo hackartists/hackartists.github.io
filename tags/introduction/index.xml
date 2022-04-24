@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>introduction on </title>
+    <link>https://www.hackartist.io/tags/introduction/</link>
+    <description>Recent content in introduction on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-KR</language>
+    <lastBuildDate>Thu, 03 Feb 2022 22:09:47 +0900</lastBuildDate><atom:link href="https://www.hackartist.io/tags/introduction/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Infrastructure</title>
+      <link>https://www.hackartist.io/infra/introduction/</link>
+      <pubDate>Thu, 03 Feb 2022 22:09:16 +0900</pubDate>
+      
+      <guid>https://www.hackartist.io/infra/introduction/</guid>
+      <description>Implementation of deployment environments to monitor and operate services.
+Key features  Hardware management such as routers, IDC and so on Network management such as firewall, network connection Software management for services and programs  Key skills  Development of automatic script Risk analysis Network monitoring and analysis skills Process establishment  </description>
+    </item>
+    
+    <item>
+      <title>Introduction</title>
+      <link>https://www.hackartist.io/emacs/introduction/</link>
+      <pubDate>Sat, 13 Feb 2021 22:42:21 +0900</pubDate>
+      
+      <guid>https://www.hackartist.io/emacs/introduction/</guid>
+      <description>Emacs를 사용하기 위해서 필요한 다양한 지식 및 기술 전달</description>
+    </item>
+    
+    <item>
+      <title>Introduction</title>
+      <link>https://www.hackartist.io/infra/docker/introduction/</link>
+      <pubDate>Thu, 11 Feb 2021 00:00:00 +0900</pubDate>
+      
+      <guid>https://www.hackartist.io/infra/docker/introduction/</guid>
+      <description>Basic Concept  Docker provides isolated environment depending on each application.  Minimization of affects among applications. Composition of guest OS on Host machine.   Each container utilizes Host&amp;rsquo;s hardware resources such like CPU, RAM and so on.    Docker installation In order to install Docker, refer to https://docs.docker.com/get-docker/.
+ Mac OS Windows Linux  Installing Docker on Arch Linux  You can use yay, pacman to install it.</description>
+    </item>
+    
+    <item>
+      <title>Design</title>
+      <link>https://www.hackartist.io/design/introduction/</link>
+      <pubDate>Thu, 03 Feb 2022 22:09:35 +0900</pubDate>
+      
+      <guid>https://www.hackartist.io/design/introduction/</guid>
+      <description>Planning phase containing architecture and UI/UX design
+Key features  Find requirements and user scenarios Design function and deployment architecture Design user interface Project management and methodology Survey technical stack  Key skills  Structuring and abstraction UI/UX Design Risk analysis Process establishment Overcoming learning curve on bleeding edge technology  </description>
+    </item>
+    
+    <item>
+      <title>Development</title>
+      <link>https://www.hackartist.io/devel/introduction/</link>
+      <pubDate>Thu, 03 Feb 2022 22:09:41 +0900</pubDate>
+      
+      <guid>https://www.hackartist.io/devel/introduction/</guid>
+      <description>Service deployment
+Key features  Find the way to implement Develop and review services  Key skills  Learn new technologies Utilize and analyze open source projects Higher programming skill Code and issue management  </description>
+    </item>
+    
+    <item>
+      <title>Testing and Operations</title>
+      <link>https://www.hackartist.io/ops/introduction/</link>
+      <pubDate>Thu, 03 Feb 2022 22:09:44 +0900</pubDate>
+      
+      <guid>https://www.hackartist.io/ops/introduction/</guid>
+      <description>Testing and Operating services
+Key features  Testing Service monitoring  Key skills  Define and automate test cases Define and analyze metrics Process establishment  </description>
+    </item>
+    
+    <item>
+      <title>Blog Introduction</title>
+      <link>https://www.hackartist.io/blog/blog-introduction/</link>
+      <pubDate>Thu, 03 Feb 2022 22:09:47 +0900</pubDate>
+      
+      <guid>https://www.hackartist.io/blog/blog-introduction/</guid>
+      <description>This blog aims to study and share everything to develop and operate services
+Feel free to give me feedback about my mistakes</description>
+    </item>
+    
+  </channel>
+</rss>

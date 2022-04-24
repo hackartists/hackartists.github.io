@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>activity-diagram on </title>
+    <link>https://www.hackartist.io/tags/activity-diagram/</link>
+    <description>Recent content in activity-diagram on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-KR</language>
+    <lastBuildDate>Mon, 01 Mar 2021 23:34:00 +0900</lastBuildDate><atom:link href="https://www.hackartist.io/tags/activity-diagram/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>액티비티(Activity) 다이어그램</title>
+      <link>https://www.hackartist.io/design/uml/activity/</link>
+      <pubDate>Mon, 01 Mar 2021 23:34:00 +0900</pubDate>
+      
+      <guid>https://www.hackartist.io/design/uml/activity/</guid>
+      <description>정의 및 목적  액티비티 다이어그램은 액티비티(activity) 및 액션(action)을 표현  반복, 조건, 병렬 등을 표현 전체적의 제어 흐름을 보여주는 것이 주요 목적  필요에 따라 데이터의 흐름도 보여줄 수 있음.      액티비티 다이어그램 주요 표현  검정색 원은 시작점 이중선이 있는 검정색 원은 종료점 타원은 액션(action), 다이아몬드 또는 육각형은 결정(decision)을 표현 바(bar)는 병렬 액티비티의 시작(split) 및 종료(join)를 표현 컬럼(swimlane)은 각 각 컴포넌트를 의미  추상화된 레벨에서 전체 컴포넌트 간의 액션의 흐름을 보기 용이함.</description>
+    </item>
+    
+  </channel>
+</rss>

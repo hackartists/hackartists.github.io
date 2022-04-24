@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>dns on </title>
+    <link>https://www.hackartist.io/tags/dns/</link>
+    <description>Recent content in dns on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-KR</language>
+    <lastBuildDate>Sat, 27 Feb 2021 20:30:00 +0900</lastBuildDate><atom:link href="https://www.hackartist.io/tags/dns/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Implementation of Docker DNS</title>
+      <link>https://www.hackartist.io/infra/docker/docker-dns/</link>
+      <pubDate>Sat, 27 Feb 2021 20:30:00 +0900</pubDate>
+      
+      <guid>https://www.hackartist.io/infra/docker/docker-dns/</guid>
+      <description>Purpose  The containers in a same docker network can communicate each other by their alias, but host machine can&amp;rsquo;t connect to them by alias or name.  Basically, the containers&#39; IPs are changed whenever they are restarted.  It makes us hard to manage and connect to the containers.     In this section, I aim to share how the host machine communicate with the containers by their containers&#39; names.</description>
+    </item>
+    
+  </channel>
+</rss>

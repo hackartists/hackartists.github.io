@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>compose on </title>
+    <link>https://www.hackartist.io/categories/compose/</link>
+    <description>Recent content in compose on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-KR</language>
+    <lastBuildDate>Sun, 21 Feb 2021 11:10:00 +0900</lastBuildDate><atom:link href="https://www.hackartist.io/categories/compose/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Management of multiple containers</title>
+      <link>https://www.hackartist.io/infra/docker/docker-compose/</link>
+      <pubDate>Sun, 21 Feb 2021 11:10:00 +0900</pubDate>
+      
+      <guid>https://www.hackartist.io/infra/docker/docker-compose/</guid>
+      <description>Introduction of docker compose  Docker compose helps us manage multiple containers with a file.  Define a network Define containers For each container, it defines their images, environments, ports and so on.      Docker network configuration Network information  Setting the name of docker network  I set the name to dev-net.   IP range of devnet was set to 192.168.100.0/24.  Namely, all of containers in dev-net network have 192.</description>
+    </item>
+    
+  </channel>
+</rss>

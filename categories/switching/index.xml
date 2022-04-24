@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>switching on </title>
+    <link>https://www.hackartist.io/categories/switching/</link>
+    <description>Recent content in switching on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-KR</language>
+    <lastBuildDate>Sun, 14 Feb 2021 22:33:27 +0900</lastBuildDate><atom:link href="https://www.hackartist.io/categories/switching/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mac OS 키보드 레이아웃 인코딩</title>
+      <link>https://www.hackartist.io/emacs/macos/input-method/</link>
+      <pubDate>Sun, 14 Feb 2021 22:33:27 +0900</pubDate>
+      
+      <guid>https://www.hackartist.io/emacs/macos/input-method/</guid>
+      <description>Mac OS 에서의 키보드 단축키 이슈  Shift+SPC 를 Mac OS와 Emacs의 키보드 한/영 전환 단축키로 사용하는 경우  Mac OS 에서 단축키를 먼저 인터셉트하기 때문에, Emacs의 toggle-input-method 가 호출되지 않고 OS 레벨의 레이아웃이 변함. 한글 입력 자체는 되지만, M-x 를 입력했을 때, M-ㅌ 등으로 나오면서 명령어가 정상적으로 동작 안함.    해결을 위한 기본 개념  Mac OS 와 Emacs 의 한영 전환을 다르게 설정하면 됨.  Mac OS 의 한/영 전환을 CMD+SPC 로 설정 Emacs 의 toggle-input-method 를 다르게 설정   Mac OS 와 Emacs 에서 서로 다른 단축키를 사용해야 하기 때문에 헷갈림  동일한 키를 이용하여 한영 전환 설정  Mac OS에서는 한/영 전환 을 CMD+SPC 로 설정하고, Emacs 에서는 S-SPC 로 설정 활성화(frontmost)된 애플리케이션이 Emacs 가 아닐 때는 Shift+SPC 가 CMD+SPC 인 것처럼 동작하도록 설정  해당 설정을 하기 위해서 karabiner elements 를 통해서 수행할 수 있음.</description>
+    </item>
+    
+  </channel>
+</rss>

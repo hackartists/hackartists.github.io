@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on </title>
+    <link>https://www.hackartist.io/categories/</link>
+    <description>Recent content in Categories on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-KR</language>
+    <lastBuildDate>Thu, 03 Feb 2022 22:09:47 +0900</lastBuildDate><atom:link href="https://www.hackartist.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>blog</title>
+      <link>https://www.hackartist.io/categories/blog/</link>
+      <pubDate>Thu, 03 Feb 2022 22:09:47 +0900</pubDate>
+      
+      <guid>https://www.hackartist.io/categories/blog/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ops</title>
+      <link>https://www.hackartist.io/categories/ops/</link>
+      <pubDate>Thu, 03 Feb 2022 22:09:44 +0900</pubDate>
+      
+      <guid>https://www.hackartist.io/categories/ops/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>testing</title>
+      <link>https://www.hackartist.io/categories/testing/</link>
+      <pubDate>Thu, 03 Feb 2022 22:09:44 +0900</pubDate>
+      
+      <guid>https://www.hackartist.io/categories/testing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>development</title>
+      <link>https://www.hackartist.io/categories/development/</link>
+      <pubDate>Thu, 03 Feb 2022 22:09:41 +0900</pubDate>
+      
+      <guid>https://www.hackartist.io/categories/development/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>design</title>
+      <link>https://www.hackartist.io/categories/design/</link>
+      <pubDate>Thu, 03 Feb 2022 22:09:35 +0900</pubDate>
+      
+      <guid>https://www.hackartist.io/categories/design/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>infra</title>
+      <link>https://www.hackartist.io/categories/infra/</link>
+      <pubDate>Thu, 03 Feb 2022 22:09:16 +0900</pubDate>
+      
+      <guid>https://www.hackartist.io/categories/infra/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>devel</title>
+      <link>https://www.hackartist.io/categories/devel/</link>
+      <pubDate>Wed, 01 Sep 2021 17:32:54 +0900</pubDate>
+      
+      <guid>https://www.hackartist.io/categories/devel/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>flutter</title>
+      <link>https://www.hackartist.io/categories/flutter/</link>
+      <pubDate>Wed, 01 Sep 2021 17:32:54 +0900</pubDate>
+      
+      <guid>https://www.hackartist.io/categories/flutter/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>plantuml</title>
+      <link>https://www.hackartist.io/categories/plantuml/</link>
+      <pubDate>Tue, 02 Mar 2021 05:59:00 +0900</pubDate>
+      
+      <guid>https://www.hackartist.io/categories/plantuml/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>terminology</title>
+      <link>https://www.hackartist.io/categories/terminology/</link>
+      <pubDate>Tue, 02 Mar 2021 05:59:00 +0900</pubDate>
+      
+      <guid>https://www.hackartist.io/categories/terminology/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>emacs</title>
+      <link>https://www.hackartist.io/categories/emacs/</link>
+      <pubDate>Tue, 02 Mar 2021 05:46:00 +0900</pubDate>
+      
+      <guid>https://www.hackartist.io/categories/emacs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ibus</title>
+      <link>https://www.hackartist.io/categories/ibus/</link>
+      <pubDate>Tue, 02 Mar 2021 05:46:00 +0900</pubDate>
+      
+      <guid>https://www.hackartist.io/categories/ibus/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>input-method</title>
+      <link>https://www.hackartist.io/categories/input-method/</link>
+      <pubDate>Tue, 02 Mar 2021 05:46:00 +0900</pubDate>
+      
+      <guid>https://www.hackartist.io/categories/input-method/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>activity-diagram</title>
+      <link>https://www.hackartist.io/categories/activity-diagram/</link>
+      <pubDate>Mon, 01 Mar 2021 23:34:00 +0900</pubDate>
+      
+      <guid>https://www.hackartist.io/categories/activity-diagram/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>uml</title>
+      <link>https://www.hackartist.io/categories/uml/</link>
+      <pubDate>Mon, 01 Mar 2021 23:34:00 +0900</pubDate>
+      
+      <guid>https://www.hackartist.io/categories/uml/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sequence-diagram</title>
+      <link>https://www.hackartist.io/categories/sequence-diagram/</link>
+      <pubDate>Sun, 28 Feb 2021 12:21:00 +0900</pubDate>
+      
+      <guid>https://www.hackartist.io/categories/sequence-diagram/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>dns</title>
+      <link>https://www.hackartist.io/categories/dns/</link>
+      <pubDate>Sat, 27 Feb 2021 20:30:00 +0900</pubDate>
+      
+      <guid>https://www.hackartist.io/categories/dns/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>docker</title>
+      <link>https://www.hackartist.io/categories/docker/</link>
+      <pubDate>Sat, 27 Feb 2021 20:30:00 +0900</pubDate>
+      
+      <guid>https://www.hackartist.io/categories/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>archlinux</title>
+      <link>https://www.hackartist.io/categories/archlinux/</link>
+      <pubDate>Sat, 27 Feb 2021 11:32:00 +0900</pubDate>
+      
+      <guid>https://www.hackartist.io/categories/archlinux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mirrorlist</title>
+      <link>https://www.hackartist.io/categories/mirrorlist/</link>
+      <pubDate>Sat, 27 Feb 2021 11:32:00 +0900</pubDate>
+      
+      <guid>https://www.hackartist.io/categories/mirrorlist/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vpn</title>
+      <link>https://www.hackartist.io/categories/vpn/</link>
+      <pubDate>Wed, 24 Feb 2021 08:37:00 +0900</pubDate>
+      
+      <guid>https://www.hackartist.io/categories/vpn/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>compose</title>
+      <link>https://www.hackartist.io/categories/compose/</link>
+      <pubDate>Sun, 21 Feb 2021 11:10:00 +0900</pubDate>
+      
+      <guid>https://www.hackartist.io/categories/compose/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>docker build</title>
+      <link>https://www.hackartist.io/categories/docker-build/</link>
+      <pubDate>Mon, 15 Feb 2021 08:04:00 +0900</pubDate>
+      
+      <guid>https://www.hackartist.io/categories/docker-build/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>input</title>
+      <link>https://www.hackartist.io/categories/input/</link>
+      <pubDate>Sun, 14 Feb 2021 22:33:27 +0900</pubDate>
+      
+      <guid>https://www.hackartist.io/categories/input/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>karaniner</title>
+      <link>https://www.hackartist.io/categories/karaniner/</link>
+      <pubDate>Sun, 14 Feb 2021 22:33:27 +0900</pubDate>
+      
+      <guid>https://www.hackartist.io/categories/karaniner/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>keyboard</title>
+      <link>https://www.hackartist.io/categories/keyboard/</link>
+      <pubDate>Sun, 14 Feb 2021 22:33:27 +0900</pubDate>
+      
+      <guid>https://www.hackartist.io/categories/keyboard/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>layout</title>
+      <link>https://www.hackartist.io/categories/layout/</link>
+      <pubDate>Sun, 14 Feb 2021 22:33:27 +0900</pubDate>
+      
+      <guid>https://www.hackartist.io/categories/layout/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>macos</title>
+      <link>https://www.hackartist.io/categories/macos/</link>
+      <pubDate>Sun, 14 Feb 2021 22:33:27 +0900</pubDate>
+      
+      <guid>https://www.hackartist.io/categories/macos/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>shortcut</title>
+      <link>https://www.hackartist.io/categories/shortcut/</link>
+      <pubDate>Sun, 14 Feb 2021 22:33:27 +0900</pubDate>
+      
+      <guid>https://www.hackartist.io/categories/shortcut/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>switching</title>
+      <link>https://www.hackartist.io/categories/switching/</link>
+      <pubDate>Sun, 14 Feb 2021 22:33:27 +0900</pubDate>
+      
+      <guid>https://www.hackartist.io/categories/switching/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>container</title>
+      <link>https://www.hackartist.io/categories/container/</link>
+      <pubDate>Thu, 11 Feb 2021 00:00:00 +0900</pubDate>
+      
+      <guid>https://www.hackartist.io/categories/container/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>database</title>
+      <link>https://www.hackartist.io/categories/database/</link>
+      <pubDate>Thu, 11 Feb 2021 00:00:00 +0900</pubDate>
+      
+      <guid>https://www.hackartist.io/categories/database/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>image</title>
+      <link>https://www.hackartist.io/categories/image/</link>
+      <pubDate>Thu, 11 Feb 2021 00:00:00 +0900</pubDate>
+      
+      <guid>https://www.hackartist.io/categories/image/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>management</title>
+      <link>https://www.hackartist.io/categories/management/</link>
+      <pubDate>Thu, 11 Feb 2021 00:00:00 +0900</pubDate>
+      
+      <guid>https://www.hackartist.io/categories/management/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

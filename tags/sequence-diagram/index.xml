@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>sequence-diagram on </title>
+    <link>https://www.hackartist.io/tags/sequence-diagram/</link>
+    <description>Recent content in sequence-diagram on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-KR</language>
+    <lastBuildDate>Sun, 28 Feb 2021 12:21:00 +0900</lastBuildDate><atom:link href="https://www.hackartist.io/tags/sequence-diagram/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>시퀀스(Sequence) 다이어그램</title>
+      <link>https://www.hackartist.io/design/uml/sequence/</link>
+      <pubDate>Sun, 28 Feb 2021 12:21:00 +0900</pubDate>
+      
+      <guid>https://www.hackartist.io/design/uml/sequence/</guid>
+      <description>시퀀스 다이어그램이란? 정의 및 목적  시간의 흐름에 따른 오브젝트들간의 상호동작(interaction)을 표현  시나리오에 연관된 오브젝트들을 표현 각 오브젝트들간의 주고받는 메시지 표현   이벤트 다이어그램(event diagrams) 또는 이벤트 시나리오(event scenarios)로 불리기도 함.  시퀀스 다이어그램  유즈케이스 다이어그램에서 작성한 식물구매 시나리오    시퀀스 다이어그램 그리기 카테고리별 참여자 정의  해당 시나리오 참여하는 사용자 및 서비스를 정의  시나리오를 그리면서 혼동을 피하기 위해서 참여자를 명확히 정의     @startuml skinparam backgroundcolor transparent actor &amp;quot;서비스 사용자&amp;quot; as u box &amp;quot;식물 쇼핑몰 서비스&amp;quot; participant &amp;quot;식물앱&amp;quot; as app control &amp;quot;인증 서버&amp;quot; as auth participant &amp;quot;API 서버&amp;quot; as api database &amp;quot;사용자 DB&amp;quot; as adb database &amp;quot;식물 DB&amp;quot; as db end box box &amp;quot;외부 서비스&amp;quot; participant &amp;quot;페이먼트 게이트웨이(PG)&amp;quot; as pg end box @enduml   문법 설명  참여자 키워드는 actor, participant, control 등 다양한 키워드가 있음.</description>
+    </item>
+    
+  </channel>
+</rss>

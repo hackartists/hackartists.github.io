@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>archlinux on </title>
+    <link>https://www.hackartist.io/tags/archlinux/</link>
+    <description>Recent content in archlinux on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-KR</language>
+    <lastBuildDate>Sat, 27 Feb 2021 11:32:00 +0900</lastBuildDate><atom:link href="https://www.hackartist.io/tags/archlinux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>미러리스트를 연결상태에 따라 정렬 및 업데이트</title>
+      <link>https://www.hackartist.io/blog/%EB%AF%B8%EB%9F%AC%EB%A6%AC%EC%8A%A4%ED%8A%B8%EB%A5%BC-%EC%97%B0%EA%B2%B0%EC%83%81%ED%83%9C%EC%97%90-%EB%94%B0%EB%9D%BC-%EC%A0%95%EB%A0%AC-%EB%B0%8F-%EC%97%85%EB%8D%B0%EC%9D%B4%ED%8A%B8/</link>
+      <pubDate>Sat, 27 Feb 2021 11:32:00 +0900</pubDate>
+      
+      <guid>https://www.hackartist.io/blog/%EB%AF%B8%EB%9F%AC%EB%A6%AC%EC%8A%A4%ED%8A%B8%EB%A5%BC-%EC%97%B0%EA%B2%B0%EC%83%81%ED%83%9C%EC%97%90-%EB%94%B0%EB%9D%BC-%EC%A0%95%EB%A0%AC-%EB%B0%8F-%EC%97%85%EB%8D%B0%EC%9D%B4%ED%8A%B8/</guid>
+      <description>목적  Arch 리눅스에서 미러리스트 업데이트  업데이트시에 최신 미러리스트를 다운로드 다운로드된 미러리스트를 연결 상태에 따라 정렬    사전 요구필요사항  pacman-contrib 설치  rankmirros 명령어 포함     pacman -S pacman-contrib 미러리스트 다운로드 및 정렬  Pacman mirrorlist generator 사용  체크하고 싶은것들 체크후에 Generate List 를 클릭 해당 링크를 사용하여 아래와 같이 수행  예제에서 사용된 링크는 한국과 일본의 미러리스트를 대상으로 하는 링크       Server = http://mirror.</description>
+    </item>
+    
+  </channel>
+</rss>

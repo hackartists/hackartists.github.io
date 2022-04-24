@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>management on </title>
+    <link>https://www.hackartist.io/tags/management/</link>
+    <description>Recent content in management on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-KR</language>
+    <lastBuildDate>Thu, 11 Feb 2021 00:00:00 +0900</lastBuildDate><atom:link href="https://www.hackartist.io/tags/management/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Container management</title>
+      <link>https://www.hackartist.io/infra/docker/docker-basic/</link>
+      <pubDate>Thu, 11 Feb 2021 00:00:00 +0900</pubDate>
+      
+      <guid>https://www.hackartist.io/infra/docker/docker-basic/</guid>
+      <description>Container creation  Create a docker container using CentOS image  -it flag means executing container with attaching their terminal (TTY) and standard input (STDIN) --name flag makes us set a human readable name of the container  You can easily manage the container if it is named. If you don&amp;rsquo;t specify a name of the container, it uses a commit tag as the name and you can use 3 or 4 leading alphanumeric of the name hash to manage it.</description>
+    </item>
+    
+  </channel>
+</rss>

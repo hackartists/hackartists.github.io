@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Contributors on </title>
+    <link>https://www.hackartist.io/contributors/</link>
+    <description>Recent content in Contributors on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-KR</language>
+    <lastBuildDate>Tue, 06 Oct 2020 08:50:29 +0000</lastBuildDate><atom:link href="https://www.hackartist.io/contributors/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Jongseok Choi</title>
+      <link>https://www.hackartist.io/contributors/hackartist/</link>
+      <pubDate>Sun, 07 Feb 2021 22:55:25 +0900</pubDate>
+      
+      <guid>https://www.hackartist.io/contributors/hackartist/</guid>
+      <description>Personal Information    Items Description     Nickname Hackartist   Email hackartists@gmail.com   GitHub https://github.com/hackartists   Blog https://hackartists.github.io   Habit Development, Emacs   Research Google Scholar    Education B.S in Information Security  Tongmyong University  2004.03 ~ 2011.0    M.E in Computer Engineering  Thesis: Broadcast Authentication for Anonymity Pusan National University  2011.03 ~ 2013.02    Ph.</description>
+    </item>
+    
+  </channel>
+</rss>

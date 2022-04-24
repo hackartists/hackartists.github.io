@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="ko-KR">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-site-verification" content="tNCBNDAHu7WCNK0UMGcP3wGpc2QbFHHjdkVZWtaC1RA" />
+
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='Container management'>
+<meta property='og:description' content='This page explains how you can manage docker containers.'>
+<meta property='og:url' content='https://www.hackartist.io/infra/docker/docker-basic/'>
+<meta property='og:site_name' content=''>
+<meta property='og:type' content='article'><meta property='article:section' content='Infra' /><meta property='article:tag' content='infra' /><meta property='article:tag' content='docker' /><meta property='article:tag' content='container' /><meta property='article:tag' content='management' /><meta property='article:published_time' content='2021-02-11T00:00:00&#43;09:00'/><meta property='article:modified_time' content='2022-04-14T19:12:43&#43;09:00'/>
+<meta name="twitter:title" content="Container management">
+<meta name="twitter:description" content="This page explains how you can manage docker containers."><link rel="preload" as="font" href="https://www.hackartist.io/fonts/vendor/jost/jost-v4-latin-regular.woff2" type="font/woff2" crossorigin>
+<link rel="preload" as="font" href="https://www.hackartist.io/fonts/vendor/jost/jost-v4-latin-700.woff2" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="https://www.hackartist.io/main.513b91602f78c359f8752f7fa109ef93113e4260c94cbd02252baca81058a5091ebc8580b506aff8de6f7c64daf29ec9317fd0cb7e305e5fce8935bd40323445.css" integrity="sha512-UTuRYC94w1n4dS9/oQnvkxE&#43;QmDJTL0CJSusqBBYpQkevIWAtQav&#43;N5vfGTa8p7JMX/Qy34wXl/OiTW9QDI0RQ==" crossorigin="anonymous">
+<noscript><style>img.lazyload { display: none; }</style></noscript>
+  <meta name="robots" content="index, follow">
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <title>Container management - Hackartist&#39;s Tech Site</title>
+<meta name="description" content="This page explains how you can manage docker containers.">
+<link rel="canonical" href="https://www.hackartist.io/infra/docker/docker-basic/">
+<meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://www.hackartist.io/infra/docker/docker-basic//Volumes/data/devel/github.com/hackartists/notes/images/도커_컨테이너_생성/2021-02-09_23-13-27_screenshot.png">
+<meta name="twitter:title" content="Container management">
+<meta name="twitter:description" content="This page explains how you can manage docker containers.">
+
+<meta name="twitter:site" content="@">
+<meta name="twitter:creator" content="@">
+
+<meta property="og:title" content="Container management">
+<meta property="og:description" content="This page explains how you can manage docker containers.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.hackartist.io/infra/docker/docker-basic/">
+<meta property="og:image" content="https://www.hackartist.io/infra/docker/docker-basic//Volumes/data/devel/github.com/hackartists/notes/images/도커_컨테이너_생성/2021-02-09_23-13-27_screenshot.png">
+  <meta property="article:published_time" content="2021-02-11T00:00:00+09:00">
+  <meta property="article:modified_time" content="2022-04-14T19:12:43+09:00">
+  <meta property="og:site_name" content="Hackartist&#39;s Tech Site">
+
+<meta property="article:publisher" content="https://www.facebook.com/">
+<meta property="article:author" content="https://www.facebook.com/">
+<meta property="og:locale" content="en_US">
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position":  1 ,
+        "name": "Home",
+        "item": "https:\/\/www.hackartist.io"
+    },{
+        "@type": "ListItem",
+        "position":  3 ,
+        "name": "Infra",
+        "item": "https:\/\/www.hackartist.io\/infra\/"
+    },{
+        "@type": "ListItem",
+        "position":  4 ,
+        "name": "Docker",
+        "item": "https:\/\/www.hackartist.io\/infra\/docker\/"
+    },{
+        "@type": "ListItem",
+        "position":  5 ,
+        "name": "Docker Basic",
+        "item": "https:\/\/www.hackartist.io\/infra\/docker\/docker-basic\/"
+    }]
+}
+</script>
+
+  <meta name="theme-color" content="#fff">
+<link rel="apple-touch-icon" sizes="180x180" href="https://www.hackartist.io/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://www.hackartist.io/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://www.hackartist.io/favicon-16x16.png">
+<link rel="manifest" href="https://www.hackartist.io/site.webmanifest">
+  
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3L5TX41ECT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-3L5TX41ECT');
+</script>
+<script data-ad-client="ca-pub-5079369906312917" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+</head>
+
+  <body class="infra single">
+    <div class="header-bar fixed-top"></div>
+<header class="navbar fixed-top navbar-expand-md navbar-light">
+  <div class="container">
+    <input class="menu-btn order-0" type="checkbox" id="menu-btn">
+    <label class="menu-icon d-md-none" for="menu-btn"><span class="navicon"></span></label>
+    <a class="navbar-brand order-1 order-md-0 mr-auto" href="https://www.hackartist.io/">Hackartist&#39;s Tech Site</a>
+    <button id="mode" class="btn btn-link order-2 order-md-4" type="button" aria-label="Toggle mode">
+      <span class="toggle-dark"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></span>
+      <span class="toggle-light"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sun"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg></span>
+    </button>
+    <ul class="navbar-nav social-nav order-3 order-md-5">
+      <li class="nav-item">
+          <a class="nav-link" href="https://github.com/hackartists/hackartists.github.io"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg><span class="ml-2 sr-only">GitHub</span></a>
+        </li>
+      </ul>
+    <div class="collapse navbar-collapse order-4 order-md-1">
+      <ul class="navbar-nav main-nav mr-auto order-5 order-md-2"><li class="nav-item active">
+            <a class="nav-link" href="https://www.hackartist.io/infra/introduction">Infrastructure</a>
+          </li>
+        <li class="nav-item">
+            <a class="nav-link" href="https://www.hackartist.io/design/introduction">Design</a>
+          </li>
+        <li class="nav-item">
+            <a class="nav-link" href="https://www.hackartist.io/devel/introduction">Development</a>
+          </li>
+        <li class="nav-item">
+            <a class="nav-link" href="https://www.hackartist.io/ops/introduction">Testing&amp;Operation</a>
+          </li>
+        <li class="nav-item">
+            <a class="nav-link" href="https://www.hackartist.io/emacs/introduction">Emacs</a>
+          </li>
+        <li class="nav-item">
+            <a class="nav-link" href="https://www.hackartist.io/blog/">Blog</a>
+          </li>
+        </ul>
+      <div class="break order-6 d-md-none"></div>
+      <form class="navbar-form flex-grow-1 order-7 order-md-3">
+        <input id="userinput" class="form-control is-search" type="search" placeholder="Search docs..." aria-label="Search docs..." autocomplete="off">
+        <div id="suggestions" class="shadow bg-white rounded"></div>
+      </form>
+    </div>
+  </div>
+</header>
+
+    <div class="wrap container" role="document">
+      <div class="content">
+        
+	<div class="row flex-xl-nowrap">
+		<div class="col-lg-5 col-xl-4 docs-sidebar">
+			<nav class="docs-links" aria-label="Main navigation">
+				<h3>Infrastructure</h3>
+<h3>Terminology</h3>
+<ul class="list-unstyled">
+  <li><a class="docs-link" href="https://www.hackartist.io/infra/terminology/docker/">Docker</a></li>
+  </ul>
+<h3>Docker</h3>
+<ul class="list-unstyled">
+  <li><a class="docs-link" href="https://www.hackartist.io/infra/docker/introduction/">Introduction</a></li>
+  <li><a class="docs-link active" href="https://www.hackartist.io/infra/docker/docker-basic/">Container management</a></li>
+  <li><a class="docs-link" href="https://www.hackartist.io/infra/docker/manage-db/">MongoDB Container</a></li>
+  <li><a class="docs-link" href="https://www.hackartist.io/infra/docker/manage-image/">Creation of Docker Image</a></li>
+  <li><a class="docs-link" href="https://www.hackartist.io/infra/docker/docker-build-advanced/">Advanced docker build technique</a></li>
+  <li><a class="docs-link" href="https://www.hackartist.io/infra/docker/docker-compose/">Management of multiple containers</a></li>
+  <li><a class="docs-link" href="https://www.hackartist.io/infra/docker/docker-vpn/">Implementation of Docker VPN</a></li>
+  <li><a class="docs-link" href="https://www.hackartist.io/infra/docker/docker-dns/">Implementation of Docker DNS</a></li>
+  </ul>
+
+			</nav>
+		</div>
+		<nav class="docs-toc d-none d-xl-block col-xl-3" aria-label="Secondary navigation">
+			<div class="page-links">
+    <h3>On this page</h3>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#container-creation">Container creation</a></li>
+    <li><a href="#connect-to-your-container">Connect to your container</a>
+      <ul>
+        <li><a href="#check-container-s-status">Check container&rsquo;s status</a></li>
+        <li><a href="#connect-into-the-container">Connect into the container</a></li>
+      </ul>
+    </li>
+    <li><a href="#docker-hub">Docker hub</a>
+      <ul>
+        <li><a href="#what-is-docker-hub">What is docker hub?</a></li>
+        <li><a href="#using-the-docker-hub">Using the docker hub</a></li>
+        <li><a href="#using-docker-image-and-tags">Using docker image and tags</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+
+		</nav>
+		<main class="docs-content col-lg-11 col-xl-9">
+		<h1>Container management</h1>
+			<p class="lead">docker container management</p>
+			<h2 id="container-creation">Container creation<a href="#container-creation" class="anchor" aria-hidden="true">#</a> </h2>
+<ul>
+<li>Create a docker container using CentOS image
+<ul>
+<li><code>-it</code> flag means executing container with attaching their terminal (TTY) and standard input (STDIN)</li>
+<li><code>--name</code> flag makes us set a human readable name of the container
+<ul>
+<li>You can easily manage the container if it is named.</li>
+<li>If you don&rsquo;t specify a name of the container, it uses a commit tag as the name and you can use 3 or 4 leading alphanumeric of the name hash to manage it.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!--listend-->
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">docker run --name centos -it centos
+</code></pre></div><ul>
+<li>Detach the attached TTY
+<ul>
+<li>You hit <code>Ctrl-p Ctrl-q</code> to exit the attached terminal without shutting down the container.</li>
+<li>If you type and run <code>exit</code> in your attached terminal, it makes the container turned off. In order to turn on it, use <code>docker start centos</code>.
+<ul>
+<li>Refer to the next section to connect the restarted container.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="connect-to-your-container">Connect to your container<a href="#connect-to-your-container" class="anchor" aria-hidden="true">#</a> </h2>
+<h3 id="check-container-s-status">Check container&rsquo;s status<a href="#check-container-s-status" class="anchor" aria-hidden="true">#</a> </h3>
+<ul>
+<li>Use <code>docker ps</code> command to list running containers.</li>
+<li>For listing all containers event if not running, run <code>docker ps -a</code>.</li>
+<li>You can retrieve the container named by <code>centos</code> by <code>docker ps -a -f name=centos</code>.
+<ul>
+<li>For more details on <code>filter</code>, refer to <a class="link" href="https://docs.docker.com/engine/reference/commandline/ps/#filtering"  target="_blank" rel="noopener"
+    >filter section</a> in the official site.</li>
+<li>Instead of the <code>filter</code>, you can use grep as <code>docker ps -a | grep centos</code>.</li>
+</ul>
+</li>
+<li>You can get the minimum information by <code>docker ps --format &quot;table {{.Names}}\t{{.Status}}\t{{.Ports}}&quot;</code>.
+<ul>
+<li>You can learn about <code>format</code> on <a class="link" href="https://docs.docker.com/engine/reference/commandline/ps/#formatting"  target="_blank" rel="noopener"
+    >docker format section</a> in the official site.</li>
+</ul>
+</li>
+</ul>
+<h3 id="connect-into-the-container">Connect into the container<a href="#connect-into-the-container" class="anchor" aria-hidden="true">#</a> </h3>
+<ul>
+<li><code>exec</code> sub-command helps us to connect into the container.
+<ul>
+<li>You must add <code>-it</code> flags to connect it, the following command shows execution of <code>bash</code> command to connect to the container.</li>
+</ul>
+</li>
+</ul>
+<!--listend-->
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">docker <span class="nb">exec</span> -it centos bash
+</code></pre></div><ul>
+<li>You can use <code>attach</code> sub-command to attach your container.
+<ul>
+<li>Note that <code>attach</code> sub-command makes you directly attach to running environment. It means that if you run exit or invoke <code>SIGTERM</code>, it terminates your container. Therefore, you use <code>Ctrl-p Ctrl-q</code> shortcut to detach the container.</li>
+</ul>
+</li>
+</ul>
+<h2 id="docker-hub">Docker hub<a href="#docker-hub" class="anchor" aria-hidden="true">#</a> </h2>
+<h3 id="what-is-docker-hub">What is docker hub?<a href="#what-is-docker-hub" class="anchor" aria-hidden="true">#</a> </h3>
+<ul>
+<li>Docker image portal
+<ul>
+<li>In order to search docker images, you can use <code>search</code> sub-command.
+<ul>
+<li>Also, you can containerize the searched images.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!--listend-->
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">docker search ubuntu
+</code></pre></div><table>
+<thead>
+<tr>
+<th>NAME</th>
+<th>DESCRIPTION</th>
+<th>STARS</th>
+<th>OFFICIAL</th>
+<th>AUTOMATED</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ubuntu</td>
+<td>Ubuntu is a Debian-based Linux operating sys…</td>
+<td>11806</td>
+<td>[OK]</td>
+<td></td>
+</tr>
+<tr>
+<td>dorowu/ubuntu-desktop-lxde-vnc</td>
+<td>Docker image to provide HTML5 VNC interface</td>
+<td>…</td>
+<td>497</td>
+<td>[OK]</td>
+</tr>
+</tbody>
+</table>
+<h3 id="using-the-docker-hub">Using the docker hub<a href="#using-the-docker-hub" class="anchor" aria-hidden="true">#</a> </h3>
+<ul>
+<li>
+<p><a class="link" href="https://hub.docker.com/"  target="_blank" rel="noopener"
+    >Docker hub</a></p>
+<ul>
+<li>Docker hub is a website for searching docker images.
+<ul>
+<li>In the results, you can find tags of an image in <code>tags</code> tab.</li>
+</ul>
+</li>
+</ul>
+<figure>
+    <img src="/ox-hugo/2021-02-09_23-13-27_screenshot.png"/> 
+</figure>
+
+</li>
+</ul>
+<h3 id="using-docker-image-and-tags">Using docker image and tags<a href="#using-docker-image-and-tags" class="anchor" aria-hidden="true">#</a> </h3>
+<ul>
+<li>Searching docker images on docker hub
+<ul>
+<li>In <code>tags</code> tab, find a tag you want to containerize.</li>
+<li>In order to containerize an image, describe the image and tag formed by <code>{image repository}:{tag}</code>.
+<ul>
+<li>The below command show a way to run ubuntu <code>20.04</code>.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!--listend-->
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">docker run -it --name ubuntu ubuntu:20.04
+</code></pre></div>
+			<div class="docs-navigation d-flex justify-content-between">
+	
+	<a href="https://www.hackartist.io/infra/docker/introduction/">
+			<div class="card my-1">
+				<div class="card-body py-2">
+					&larr; Introduction
+				</div>
+			</div>
+		</a>
+	<a class="ml-auto" href="https://www.hackartist.io/infra/docker/manage-db/">
+			<div class="card my-1">
+				<div class="card-body py-2">
+					MongoDB Container &rarr;
+				</div>
+			</div>
+		</a>
+	</div>
+
+		</main>
+	</div>
+
+      </div>
+    </div>
+    
+    
+    <footer class="footer text-muted">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 order-last order-lg-first">
+        <ul class="list-inline">
+          <li class="list-inline-item">Written by <a href="https://github.com/hackartists/">Hackartists</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-8 order-first order-lg-last text-lg-right">
+        <ul class="list-inline">
+          </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+    
+    <script src="https://www.hackartist.io/main.3ad44c88a44a6b3565c5e8c0ce56d40eda8d8e6ad8851feaec0d7b6086558f92673baefa3da37eda4122378c781e70c502dd44de30d6952ded1434465895eebf.js" integrity="sha512-OtRMiKRKazVlxejAzlbUDtqNjmrYhR/q7A17YIZVj5JnO676PaN&#43;2kEiN4x4HnDFAt1E3jDWlS3tFDRGWJXuvw==" crossorigin="anonymous" defer></script>
+  <script src="https://www.hackartist.io/index.min.2c870c8cafebe1d4985c84650f6732b7dbeb97092c016f634599b6fe012b5e70abbc080b1ea4fd7f8602b9ff09b370f5f32c095b3505bb04422fc62409804123.js" integrity="sha512-LIcMjK/r4dSYXIRlD2cyt9vrlwksAW9jRZm2/gErXnCrvAgLHqT9f4YCuf8Js3D18ywJWzUFuwRCL8YkCYBBIw==" crossorigin="anonymous" defer></script>
+
+  </body>
+</html>
